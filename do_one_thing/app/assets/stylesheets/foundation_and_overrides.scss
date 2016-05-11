@@ -50,3 +50,41 @@
 //
 // @include motion-ui-transitions;
 // @include motion-ui-animations;
+
+.top-bar ul{ 
+	font-family: impact;
+	font-size: map-get(map-get($header-sizes, small), h1) * 1px;
+	color: black;
+}
+
+.top-bar a{
+	color: black;
+}
+
+.top-bar a.First{
+	color:#501491;
+}
+
+hr{
+	border: 0;
+    height: 1px;
+}
+
+hr.top{
+	background-image: linear-gradient(to right, white, #0A2D50, white); 
+}
+
+hr.bottom{
+	background-image: linear-gradient(to right, white, #501491, white); 
+}
+
+a.OT {
+	color: black;
+}
+
+h1.C{
+	color:#0A2D50;
+}
+h1.G{
+	color:#501491;
+}
