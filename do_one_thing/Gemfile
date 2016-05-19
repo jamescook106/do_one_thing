@@ -46,3 +46,5 @@ group :development do
 end
 
 gem 'foundation-rails', '~> 6.2.1'
+
+gem 'rails_admin'

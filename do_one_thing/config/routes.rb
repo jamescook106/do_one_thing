@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get "/:page" => "welcome#show"
   get "/opportunity/:id" => "welcome#generate"
 
