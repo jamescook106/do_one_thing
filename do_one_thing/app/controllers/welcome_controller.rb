@@ -9,8 +9,16 @@ class WelcomeController < ApplicationController
       end
     end
 
+  def generate
+    @jobs = Job.all
+    render template: "welcome/opportunity"
+  end
+
     private
     def valid_page?
       File.exist?(Pathname.new(Rails.root + "app/views/welcome/#{params[:page]}.html.erb"))
     end
+
+
+
 end
