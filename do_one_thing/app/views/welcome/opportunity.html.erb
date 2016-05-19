@@ -1,4 +1,24 @@
 <% @title=params[:id] %>
-<div class="row column">
-<p>  <%= params[:id] %></p>
+
+<div class="row">
+		<% page="opportunity/" + params[:id] %>
+		<% @jobs.each do |message| %> 
+
+			<% if page==message.url %>
+				<div class="large-6 columns">
+					<%=image_tag(message.image, alt: "See a Careers Consultant", width:"100%")%>
+				</div>
+				<div class="large-6 columns">
+					<h5><a class='OT' href=<%= message.url %>> <p><%= message.name %></p> </a></h5>
+					<p>
+						<span><i class="fi-torso"> <%= message.tagline %> &nbsp;&nbsp;</i></span>
+						<span><i class="fi-calendar"> <p class="time"><%= message.created_at %></p>  &nbsp;&nbsp;</i></span>
+					</p>
+					<p class="content"><%= message.content %></p> 
+				</div>
+			<% end %>
+		<% end %>
 </div>
+<br>
+
+
