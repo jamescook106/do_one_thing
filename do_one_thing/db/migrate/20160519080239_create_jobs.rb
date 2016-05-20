@@ -3,6 +3,8 @@ class CreateJobs < ActiveRecord::Migration
     create_table :jobs do |t|
 
       t.text :name
+      t.boolean :primary
+      t.boolean :secondary
       t.text :url
       t.text :image
       t.text :tagline

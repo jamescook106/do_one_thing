@@ -1,7 +1,7 @@
 <% @title=params[:id] %>
 
 <div class="row">
-		<% page="opportunity/" + params[:id] %>
+		<% page=params[:id] %>
 		<% @jobs.each do |message| %> 
 
 			<% if page==message.url %>

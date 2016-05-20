@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(version: 20160519080239) do
 
   create_table "jobs", force: :cascade do |t|
     t.text     "name"
+    t.boolean  "primary"
+    t.boolean  "secondary"
     t.text     "url"
     t.text     "image"
     t.text     "tagline"
