@@ -6,7 +6,6 @@ class CreateJobs < ActiveRecord::Migration
       t.boolean :primary
       t.boolean :secondary
       t.text :url
-      t.text :image
       t.text :tagline
       t.text :short
       t.text :content
