@@ -12,7 +12,7 @@
 					<h5><a class='OT'> <p><%= message.name %></p> </a></h5>
 					<p>
 						<span><i class="fi-torso"> <%= message.tagline %> &nbsp;&nbsp;</i></span>
-						<span><i class="fi-calendar"> <p class="time"><%= message.created_at %></p>  &nbsp;&nbsp;</i></span>
+						<span><i class="fi-calendar"> <p class="time"><%= message.created_at.to_date %></p>  &nbsp;&nbsp;</i></span>
 					</p>
 					<p class="content"><%= message.content %></p> 
 				</div>

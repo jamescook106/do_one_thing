@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get "/:page" => "welcome#show"
   get "/opportunity/:id" => "welcome#generate"
+  get "/latest_opportunities/:no" => "welcome#no"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

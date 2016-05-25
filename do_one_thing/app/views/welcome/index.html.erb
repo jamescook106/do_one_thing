@@ -52,12 +52,12 @@
 </div>
 <hr class ='bottom'>
 <div class="row">
-<div class="large-12 columns" style="border-right: 1px solid #E3E5E8;">
+<div class="large-12 columns">
 <article>
 
-<% @jobs.reverse.each do |message| %> 
 <% oc=0 %>
-<% if oc<4 %>
+<% @jobs.reverse.each do |message| %> 
+<% if oc<3 %>
 <% oc = oc+1 %>
 <div class="row">
 <div class="large-6 columns">
@@ -68,7 +68,7 @@
 <h5><a class='OT' href=<%= url %>> <p><%= message.name %></p> </a></h5>
 <p>
 <span><i class="fi-torso"> <%= message.tagline %> &nbsp;&nbsp;</i></span>
-<span><i class="fi-calendar"> <p class="time"><%= message.created_at %></p>  &nbsp;&nbsp;</i></span>
+<span><i class="fi-calendar"> <p class="time"><%= message.created_at.to_date %></p>  &nbsp;&nbsp;</i></span>
 </p>
 <p class="content"><%= message.short %></p> 
 </div>
@@ -77,16 +77,17 @@
 <% end %>
 <% end %>
 
-<!--
+<% if @jobs.length >3 %>
 <ul class="pagination" role="navigation" aria-label="Pagination">
 <li class="disabled">Previous <span class="show-for-sr">page</span></li>
 <li class="current"><span class="show-for-sr">You're on page</span> 1</li>
-<li><a href="#" aria-label="Page 2">2</a></li>
+<li><a href="latest_opportunities/2" aria-label="Page 2">2</a></li>
+<% if @jobs.length >9 %>
 <li><a href="#" aria-label="Page 3">3</a></li>
-<li><a href="#" aria-label="Page 4">4</a></li>
+<%end %>
 <li><a href="#" aria-label="Next page">Next <span class="show-for-sr">page</span></a></li>
 </ul>
--->
+<% end %>
 </article>
 </div>
 </div>
