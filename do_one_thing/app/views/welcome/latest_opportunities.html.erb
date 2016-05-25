@@ -9,7 +9,7 @@
 <div class="row">
 		<div class="large-12 columns">
 <% oc=0 %>
-<% oclim = 3+(6*(params[:no].to_i-2)) %>
+<% oclim = 2+(6*(params[:no].to_i-2)) %>
 <% @jobs.reverse.each do |message| %> 
 <% if oc<oclim %>
 <% oc = oc+1 %>
@@ -32,4 +32,5 @@
 <% end %>
 <% end %>
 </div>
+
 <br>
