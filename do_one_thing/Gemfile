@@ -50,3 +50,5 @@ gem 'foundation-rails', '~> 6.2.1'
 gem 'rails_admin'
 
 gem 'paperclip'
+
+gem 'devise'

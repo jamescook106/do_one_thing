@@ -29,10 +29,12 @@
 					</ul>
 				</div>
 				<div class="top-bar-right">
-					<ul class="menu">
-						<!--<li><input type="search" placeholder="Search"></li>-->
-						<!--<li><button type="button" class="button">Search</button></li>-->
+					<% if user_signed_in? %>
+					<ul class="dropdown menu" data-dropdown-menu>
+  						<li><%= link_to "Profile", edit_user_registration_path %></li>
+  						<li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
 					</ul>
+					<% end %>
 				</div>
 			</div>
 		</div>
@@ -55,6 +57,9 @@
 <div class="row">
 <div class="large-12 columns">
 <div class="row expanded callout secondary">
+	<% if not user_signed_in? %>
+		<li><%= link_to "Sign in", new_user_session_path %></li>
+	<% end %>
 </div>	
 </div>
 </footer>
