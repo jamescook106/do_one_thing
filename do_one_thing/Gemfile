@@ -54,3 +54,5 @@ gem 'paperclip'
 gem 'devise'
 
 gem 'cancancan'
+
+gem 'social-share-button'

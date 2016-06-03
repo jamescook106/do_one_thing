@@ -21,6 +21,7 @@
 					<p>
 						<span><i class="fi-torso"> <%= message.tagline %> &nbsp;&nbsp;</i></span>
 						<span><i class="fi-calendar"> <p class="time"><%= message.created_at.to_date.strftime("%d/%m/%Y") %> </p>  &nbsp;&nbsp;</i></span>
+						<span><%= social_share_button_tag(message.name) %></span>
 					</p>
 					<p class="content"><%= message.content %></p> 
 				</div>

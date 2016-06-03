@@ -56,7 +56,6 @@
 <div class="row">
 <div class="large-12 columns">
 <article>
-
 <% oc=0 %>
 <% @jobs.reverse.each do |message| %> 
 <% if oc<10 %>
@@ -67,10 +66,12 @@
 </div>
 <div class="large-6 columns">
 <% url="opportunity/" + message.url %>
+<% full_url=request.base_url+"/"+url%>
 <h5><a class='OT' href=<%= url %>> <p><%= message.name %></p> </a></h5>
 <p>
 <span><i class="fi-torso"> <%= message.tagline %> &nbsp;&nbsp;</i></span>
 <span><i class="fi-calendar"> <p class="time"><%= message.created_at.to_date.strftime("%d/%m/%Y") %></p>  &nbsp;&nbsp;</i></span>
+<span><%= social_share_button_tag(message.name, :url=>full_url) %></span>
 </p>
 <p class="content"><%= message.short %></p> 
 </div>
