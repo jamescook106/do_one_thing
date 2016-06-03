@@ -55,13 +55,28 @@
 <%= javascript_include_tag "application" %>
 
 <footer>
-<div class="row">
-<div class="large-12 columns">
 <div class="row expanded callout secondary">
+	<div class="large-6 columns">
 	<% if not user_signed_in? %>
-		<p><%= link_to "Sign in", new_user_session_path %></p>
+		<p class="pfooter"><%= link_to "Sign in", new_user_session_path %> </p>
 	<% end %>
-</div>	
+</div>
+<div class="large-6 columns">
+	<ul class="menu">
+		<li>
+<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fkingscareers%2F%3Ffref%3Dnf&width=97&layout=button&action=like&show_faces=true&share=true&height=65&appId" width="97" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+</li>
+		<li><a>
+<iframe
+  src="https://platform.twitter.com/widgets/tweet_button.html?size=l&url=https%3A%2F%2Fdev.twitter.com%2Fweb%2Ftweet-button&via=twitterdev&related=twitterapi%2Ctwitter&text=custom%20share%20text&hashtags=example%2Cdemo"
+  width="140"
+  height="28"
+  title="Twitter Tweet Button"
+  style="border: 0; overflow: hidden;">
+</iframe>
+</a>
+</li>
+</ul>
 </div>
 </footer>
 

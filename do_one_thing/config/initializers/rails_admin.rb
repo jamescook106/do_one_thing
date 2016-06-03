@@ -39,4 +39,29 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.model Job do
+    edit do
+      field :name do
+        required true 
+      end
+      field :primary 
+      field :secondary
+      field :url do
+        required true 
+      end
+      field :tagline do
+        required true 
+      end
+      field :short do
+        required true 
+      end
+      field :content do
+        required true 
+      end
+      field :photo do
+        required true 
+      end
+    end
+  end
 end
