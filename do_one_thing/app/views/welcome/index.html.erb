@@ -7,6 +7,7 @@
 	<%if message.primary==true %>
 	<div class="medium-8 columns">
 		<%=image_tag(message.photo.url, alt: message.name, width:"100%")%>
+		<p class="content"><%= message.tagline %></p> 
 	</div>
 	<%break%>
 	<%end %>
@@ -18,7 +19,7 @@
 	<%sc=sc+1 %>
 	<div class="medium-4 columns">
 		<%=image_tag(message.photo.url, alt: message.name, width:"100%")%>
-		<h1><%message.tagline %></h1>
+		<p class="content"><%= message.tagline %></p> 
 	</div>
 	<%end %>
 	<% end %>
