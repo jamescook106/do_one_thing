@@ -63,6 +63,7 @@
 <% if message.release.to_date < Time.now %>
 <% if message.expiry.to_date > Time.now %>
 <% oc = oc+1 %>
+<%=message.impressionist_count(:start_date=>Date.today-7.days)%>
 <div class="row">
 <div class="large-6 columns">
 <%=image_tag(message.photo.url, alt:  message.name, width:"100%")%>
