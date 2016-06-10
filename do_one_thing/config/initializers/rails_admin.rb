@@ -68,6 +68,7 @@ RailsAdmin.config do |config|
       field :photo do
         required true 
       end
+      field :impressions_count
     end
   end
 end

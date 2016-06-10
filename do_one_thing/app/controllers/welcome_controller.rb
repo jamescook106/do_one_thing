@@ -1,5 +1,4 @@
 class WelcomeController < ApplicationController
-
    def show
       @jobs = Job.all
       if valid_page?
@@ -11,6 +10,8 @@ class WelcomeController < ApplicationController
 
   def generate
     @jobs = Job.all
+    @hit = Job.where(url: params[:id]).first
+    impressionist(@hit)
     render template: "welcome/opportunity"
   end
 
