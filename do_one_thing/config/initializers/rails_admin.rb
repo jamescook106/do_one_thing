@@ -59,6 +59,12 @@ RailsAdmin.config do |config|
       field :content do
         required true 
       end
+      field :release do
+        required true
+      end
+      field :expiry do
+        required true
+      end
       field :photo do
         required true 
       end

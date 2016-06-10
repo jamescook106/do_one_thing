@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160602103547) do
+ActiveRecord::Schema.define(version: 20160610082533) do
 
   create_table "jobs", force: :cascade do |t|
     t.text     "name"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20160602103547) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.datetime "expiry"
+    t.datetime "release"
   end
 
   create_table "users", force: :cascade do |t|
