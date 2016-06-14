@@ -1,7 +1,18 @@
 <% @title="Home" %>
-
-<style>.fi-social-facebook{color:dodgerblue;font-size:2rem;}.fi-social-youtube{color:red;font-size:2rem;}.fi-social-pinterest{color:darkred;font-size:2rem;}i.fi-social-instagram{color:brown;font-size:2rem;}i.fi-social-tumblr{color:navy;font-size:2rem;}.fi-social-twitter{color:skyblue;font-size:2rem;}</style>
-
+<div class="row">
+<div class="large-12 columns">
+		<%=image_tag("Header_Placeholder.png", alt: "Header", width:"100%")%>
+	<p> Doing one thing extra might help you find out more about yourself, your career, meet some interesting people or just enhance your time at King’s.  Doing one thing might lead to doing one more thing and after that, who knows?</p>
+<p>
+We know that finding the right opportunity can be tricky.  #do1thing is your go-to site for the most relevant information for King’s researchers.
+</p>
+</div>
+</div>
+<hr class='top'>
+<div class="row column">
+<h4 style="margin: 0;" class="text-center">THIS WEEK'S FEATURED OPPORTUNITIES</h4>
+</div>
+<hr class='bottom'>
 <div class="row">
 	<% @jobs.reverse.each do |message| %> 
 	<%if message.primary==true %>
@@ -67,6 +78,8 @@
 <hr class ='bottom'>
 <div class="row">
 <div class="large-12 columns">
+	<p>Do you have an opportunity you’d like to see featured here?  Please <a href="/contact_us">contact us</a> to find out how.
+ </p>
 <article>
 <% oc=0 %>
 <% @jobs.reverse.each do |message| %> 
@@ -83,9 +96,9 @@
 <% full_url=request.base_url+"/"+url%>
 <h5><a class='OT' href=<%= url %>> <p><%= message.name %></p> </a></h5>
 <p>
-<span><i class="fi-torso"> <%= message.tagline %> &nbsp;&nbsp;</i></span>
-<span><i class="fi-calendar"> <p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Deadline: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>  &nbsp;&nbsp;</i></span>
-<span><%= social_share_button_tag(message.name, :url=>full_url) %></span>
+<span> <%= message.tagline %> &nbsp;&nbsp;</span>
+<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Deadline: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
+<%= social_share_button_tag(message.name, :url=>full_url) %>
 </p>
 <p class="content"><%= message.short %></p> 
 </div>

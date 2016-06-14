@@ -20,14 +20,19 @@
 				<div class="large-6 columns">
 					<h5><a class='OT'> <p><%= message.name %></p> </a></h5>
 					<p>
-						<span><i class="fi-torso"> <%= message.tagline %> &nbsp;&nbsp;</i></span>
-						<span><i class="fi-calendar"> <p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Deadline: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>  &nbsp;&nbsp;</i></span>
-						<span><%= social_share_button_tag(message.name) %></span>
+						<span> <%= message.tagline %> &nbsp;&nbsp;</span>
+<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Deadline: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
+<%= social_share_button_tag(message.name) %>
+</p>
 					</p>
 					<p class="content"><%= message.content %></p> 
 				</div>
 			<% end %>
 		<% end %>
+	<div class="large-12 columns">
+		<p> When you take up this opportunity, use #kcldo1thing to let us know how you got on! </p>
+
+	</div>
 </div>
 <br>
 
