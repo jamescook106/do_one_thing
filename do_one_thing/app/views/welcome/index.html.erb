@@ -25,30 +25,37 @@
 	<% end %>
 
 </div>
-<!--
+
 <hr class='top'>
 <div class="row column">
 <h4 style="margin: 0;" class="text-center">MOST POPULAR - CHOSEN BY KING'S RESEARCHERS</h4>
 </div>
 <hr class='bottom'>
 <div class="row small-up-3 medium-up-4 large-up-5">
+<% sarray=[] %>
+<% @jobs.reverse.each do |message| %>
+<% if message.release.to_date < Time.now %>
+<% if message.expiry.to_date > Time.now %>
+<% ssaray=[] %>
+<% ssaray << message.impressionist_count(:start_date=>Date.today-7.days) %>
+<% ssaray << message.photo.url %>
+<% ssaray << message.name %>
+<% sarray << ssaray %>
+<% end %>
+<% end %>
+<% end %>
+<% oc1=0 %> 	
+<% sarray.sort! {|x,y| x[0]<=>y[0]} %>
+<% sarray.reverse.each do |pop| %>
+<% if oc1<5 %>
+<% oc1 = oc1+1 %>
 <div class="column">
-<img src="http://placehold.it/400x370&text=Look at me!" alt="image for article">
+<%=image_tag(pop[1], alt:  pop[2], width:'370')%>
 </div>
-<div class="column">
-<img src="http://placehold.it/400x370&text=Look at me!" alt="image for article">
+<% end %>
+<% end %>
 </div>
-<div class="column">
-<img src="http://placehold.it/400x370&text=Look at me!" alt="image for article">
-</div>
-<div class="column show-for-medium">
-<img src="http://placehold.it/400x370&text=Look at me!" alt="image for article">
-</div>
-<div class="column show-for-large">
-<img src="http://placehold.it/400x370&text=Look at me!" alt="image for article">
-</div>
-</div>
--->
+
 <hr class='top'>
 <div class="row column">
 <h4 style="margin: 0;" class="text-center">LATEST OPPORTUNITES</h4>
@@ -63,7 +70,6 @@
 <% if message.release.to_date < Time.now %>
 <% if message.expiry.to_date > Time.now %>
 <% oc = oc+1 %>
-<%=message.impressionist_count(:start_date=>Date.today-7.days)%>
 <div class="row">
 <div class="large-6 columns">
 <%=image_tag(message.photo.url, alt:  message.name, width:"100%")%>
@@ -75,9 +81,6 @@
 <p>
 <span><i class="fi-torso"> <%= message.tagline %> &nbsp;&nbsp;</i></span>
 <span><i class="fi-calendar"> <p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Deadline: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>  &nbsp;&nbsp;</i></span>
-<!--
-<span><i class="fi-calendar"> <p class="time"><%= message.release %> <%= Time.now %></p>  &nbsp;&nbsp;</i></span>
--->
 <span><%= social_share_button_tag(message.name, :url=>full_url) %></span>
 </p>
 <p class="content"><%= message.short %></p> 
