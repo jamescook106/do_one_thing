@@ -21,7 +21,7 @@
 					<h5><a class='OT'> <p><%= message.name %></p> </a></h5>
 					<p>
 						<span><i class="fi-torso"> <%= message.tagline %> &nbsp;&nbsp;</i></span>
-						<span><i class="fi-calendar"> <p class="time"><%= message.created_at.to_date.strftime("%d/%m/%Y") %> </p>  &nbsp;&nbsp;</i></span>
+						<span><i class="fi-calendar"> <p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Deadline: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>  &nbsp;&nbsp;</i></span>
 						<span><%= social_share_button_tag(message.name) %></span>
 					</p>
 					<p class="content"><%= message.content %></p> 

@@ -6,7 +6,8 @@
 	<% @jobs.reverse.each do |message| %> 
 	<%if message.primary==true %>
 	<div class="medium-8 columns">
-		<%=image_tag(message.photo.url, alt: message.name, width:"100%")%>
+		<% url="opportunity/" + message.url %>
+		<%=link_to image_tag(message.photo.url, alt: message.name, width:"100%"),url %>
 		<p class="content"><%= message.tagline %></p> 
 	</div>
 	<%break%>
@@ -18,7 +19,8 @@
 	<%if message.secondary==true and sc<2 %>
 	<%sc=sc+1 %>
 	<div class="medium-4 columns">
-		<%=image_tag(message.photo.url, alt: message.name, width:"100%")%>
+		<% url="opportunity/" + message.url %>
+		<%=link_to image_tag(message.photo.url, alt: message.name, width:"100%"),url %>
 		<p class="content"><%= message.tagline %></p> 
 	</div>
 	<%end %>
@@ -40,6 +42,7 @@
 <% ssaray << message.impressionist_count(:start_date=>Date.today-7.days) %>
 <% ssaray << message.photo.url %>
 <% ssaray << message.name %>
+<% ssaray << message.url %>
 <% sarray << ssaray %>
 <% end %>
 <% end %>
@@ -50,7 +53,8 @@
 <% if oc1<5 %>
 <% oc1 = oc1+1 %>
 <div class="column">
-<%=image_tag(pop[1], alt:  pop[2], width:'370')%>
+<% url="opportunity/" + pop[3] %>
+<%=link_to image_tag(pop[1], alt:  pop[2], width:'370'),url%>
 </div>
 <% end %>
 <% end %>
@@ -72,10 +76,10 @@
 <% oc = oc+1 %>
 <div class="row">
 <div class="large-6 columns">
-<%=image_tag(message.photo.url, alt:  message.name, width:"100%")%>
+<% url="opportunity/" + message.url %>
+<%=link_to image_tag(message.photo.url, alt:  message.name, width:"100%"),url %>
 </div>
 <div class="large-6 columns">
-<% url="opportunity/" + message.url %>
 <% full_url=request.base_url+"/"+url%>
 <h5><a class='OT' href=<%= url %>> <p><%= message.name %></p> </a></h5>
 <p>
