@@ -51,7 +51,7 @@ We know that finding the right opportunity can be tricky.  #do1thing is your go-
 <% if message.expiry.to_date > Time.now %>
 <% ssaray=[] %>
 <% ssaray << message.impressionist_count(:start_date=>Date.today-7.days) %>
-<% ssaray << message.photo.url %>
+<% ssaray << message.photo.url(:thumb) %>
 <% ssaray << message.name %>
 <% ssaray << message.url %>
 <% sarray << ssaray %>
