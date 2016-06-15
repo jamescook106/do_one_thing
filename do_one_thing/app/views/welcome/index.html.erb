@@ -1,4 +1,15 @@
 <% @title="Home" %>
+
+<script type="text/javascript"> 
+  $(document).ready(function(){
+     $.cookieBar({
+     	policyButton: true,
+		policyText: 'Privacy Policy',
+		policyURL: 'http://www.kcl.ac.uk/terms/index.aspx',
+     });
+  });
+</script>
+
 <div class="row">
 <div class="large-12 columns">
 		<%=image_tag("Header_Placeholder.png", alt: "Header", width:"100%")%>
