@@ -20,8 +20,10 @@
 	<%if message.primary==true %>
 	<div class="medium-8 columns">
 		<% url="opportunity/" + message.url %>
-		<%=link_to image_tag(message.photo.url, alt: message.name, width:"100%"),url %>
-		<p class="content"><%= message.tagline %></p> 
+		<div class="overlay-container">
+		<%=link_to image_tag(message.photo.url(:primary), alt: message.name, title:message.name, width:"100%"),url %>
+		<div class="overlay"><span><%= message.name %></span></div>
+	</div>
 	</div>
 	<%break%>
 	<%end %>
@@ -33,8 +35,10 @@
 	<%sc=sc+1 %>
 	<div class="medium-4 columns">
 		<% url="opportunity/" + message.url %>
-		<%=link_to image_tag(message.photo.url, alt: message.name, width:"100%"),url %>
-		<p class="content"><%= message.tagline %></p> 
+		<div class="overlay-container">
+		<%=link_to image_tag(message.photo.url(:secondary), alt: message.name, title:message.name, width:"100%"),url %>
+		<div class="overlay"><span><%= message.name %></span></div>
+	</div>
 	</div>
 	<%end %>
 	<% end %>
