@@ -11,132 +11,130 @@
 </script>
 
 <div class="row">
-<div class="large-12 columns">
+	<div class="large-12 columns">
 		<%=image_tag("Header_Placeholder.png", alt: "Header", width:"100%")%>
-	<h4> Calling all King's Researchers! </h4>
-	<ol>
-		<li>Too many activities to choose from?</li>
-		<li>Just #do1thing to help your professional future</li>
-		<li>You’re two clicks away from a great opportunity</li>
-	</ol>
+		<h4> Calling all King's Researchers! </h4>
+		<ol>
+			<li>Too many activities to choose from?</li>
+			<li>Just #do1thing to help your professional future</li>
+			<li>You’re two clicks away from a great opportunity</li>
+		</ol>
+	</div>
 </div>
-</div>
+
 <hr class='top'>
-<div class="row column">
-<h4 style="margin: 0;" class="text-center">THIS WEEK'S FEATURED OPPORTUNITIES</h4>
-</div>
+	<div class="row column">
+		<h4 style="margin: 0;" class="text-center">THIS WEEK'S FEATURED OPPORTUNITIES</h4>
+	</div>
 <hr class='bottom'>
+
 <div class="row">
 	<% @jobs.reverse.each do |message| %> 
-	<%if message.primary==true %>
-	<div class="medium-8 columns">
-		<% url="opportunity/" + message.url %>
-		<div class="overlay-container">
-		<%=link_to image_tag(message.photo.url(:primary), alt: message.name, title:message.name, width:"100%"),url %>
-		<div class="overlay"><span><%= message.name %></span></div>
-	</div>
-	</div>
-	<%break%>
-	<%end %>
+		<%if message.primary==true %>
+			<div class="medium-8 columns">
+				<% url="opportunity/" + message.url %>
+				<div class="overlay-container">
+					<%=link_to image_tag(message.photo.url(:primary), alt: message.name, title:message.name, width:"100%"),url %>
+					<div class="overlay"><span><%= message.name %></span></div>
+				</div>
+			</div>
+		<% break %>
+		<% end %>
 	<% end %>
 	
 	<% @jobs.reverse.each do |message| %> 
 	<% sc=0 %>
-	<%if message.secondary==true and sc<2 %>
-	<%sc=sc+1 %>
-	<div class="medium-4 columns">
-		<% url="opportunity/" + message.url %>
-		<div class="overlay-container">
-		<%=link_to image_tag(message.photo.url(:secondary), alt: message.name, title:message.name, width:"100%"),url %>
-		<div class="overlay"><span><%= message.name %></span></div>
-	</div>
-	</div>
-	<%end %>
+		<%if message.secondary==true and sc<2 %>
+			<%sc=sc+1 %>
+			<div class="medium-4 columns">
+				<% url="opportunity/" + message.url %>
+				<div class="overlay-container">
+					<%=link_to image_tag(message.photo.url(:secondary), alt: message.name, title:message.name, width:"100%"),url %>
+					<div class="overlay"><span><%= message.name %></span></div>
+				</div>
+			</div>
+		<% end %>
 	<% end %>
-
 </div>
 
 <hr class='top'>
-<div class="row column">
-<h4 style="margin: 0;" class="text-center">MOST POPULAR - CHOSEN BY KING'S RESEARCHERS</h4>
-</div>
+	<div class="row column">
+		<h4 style="margin: 0;" class="text-center">MOST POPULAR - CHOSEN BY KING'S RESEARCHERS</h4>
+	</div>
 <hr class='bottom'>
+
 <div class="row small-up-3 medium-up-4 large-up-5">
-<% sarray=[] %>
-<% @jobs.reverse.each do |message| %>
-<% if message.release.to_date < Time.now %>
-<% if message.expiry.to_date > Time.now %>
-<% ssaray=[] %>
-<% ssaray << message.impressionist_count(:start_date=>Date.today-7.days) %>
-<% ssaray << message.photo.url(:thumb) %>
-<% ssaray << message.name %>
-<% ssaray << message.url %>
-<% sarray << ssaray %>
-<% end %>
-<% end %>
-<% end %>
-<% oc1=0 %> 	
-<% sarray.sort! {|x,y| x[0]<=>y[0]} %>
-<% sarray.reverse.each do |pop| %>
-<% if oc1<5 %>
-<% oc1 = oc1+1 %>
-<div class="column">
-<% url="opportunity/" + pop[3] %>
-<%=link_to image_tag(pop[1], alt:  pop[2], width:'370'),url%>
-</div>
-<% end %>
-<% end %>
+	<% sarray=[] %>
+	<% @jobs.reverse.each do |message| %>
+		<% if message.release.to_date < Time.now %>
+			<% if message.expiry.to_date > Time.now %>
+				<% ssaray=[] %>
+				<% ssaray << message.impressionist_count(:start_date=>Date.today-7.days) %>
+				<% ssaray << message.photo.url(:thumb) %>
+				<% ssaray << message.name %>
+				<% ssaray << message.url %>
+				<% sarray << ssaray %>
+			<% end %>
+		<% end %>
+	<% end %>
+	<% oc1=0 %> 	
+	<% sarray.sort! {|x,y| x[0]<=>y[0]} %>
+	<% sarray.reverse.each do |pop| %>
+		<% if oc1<5 %>
+			<% oc1 = oc1+1 %>
+			<div class="column">
+				<% url="opportunity/" + pop[3] %>
+				<%=link_to image_tag(pop[1], alt:  pop[2], width:'370'),url%>
+			</div>
+		<% end %>
+	<% end %>
 </div>
 
 <hr class='top'>
-<div class="row column">
-<h4 style="margin: 0;" class="text-center">LATEST OPPORTUNITES</h4>
-</div>
+	<div class="row column">
+		<h4 style="margin: 0;" class="text-center">LATEST OPPORTUNITES</h4>
+	</div>
 <hr class ='bottom'>
-<div class="row">
-<div class="large-12 columns">
-	<p>Do you have an opportunity you’d like to see featured here?  Please <a href="/contact_us">contact us</a> to find out how.
- </p>
-<article>
-<% oc=0 %>
-<% @jobs.reverse.each do |message| %> 
-<% if oc<10 %>
-<% if message.release.to_date < Time.now %>
-<% if message.expiry.to_date > Time.now %>
-<% oc = oc+1 %>
-<div class="row">
-<div class="large-6 columns">
-<% url="opportunity/" + message.url %>
-<%=link_to image_tag(message.photo.url, alt:  message.name, width:"100%"),url %>
-</div>
-<div class="large-6 columns">
-<% full_url=request.base_url+"/"+url%>
-<h5><a class='OT' href=<%= url %>> <p><%= message.name %></p> </a></h5>
-<p>
-<span> <%= message.tagline %> &nbsp;&nbsp;</span>
-<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Deadline: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
-<%= social_share_button_tag(message.name, :url=>full_url) %>
-</p>
-<p class="content"><%= message.short %></p> 
-</div>
-</div>
-<hr>
-<% end %>
-<% end %>
-<% end %>
-<% end %>
 
-<% if @jobs.length >10 %>
-<ul class="pagination" role="navigation" aria-label="Pagination">
-<li class="disabled">Previous <span class="show-for-sr">page</span></li>
-<li class="current"><span class="show-for-sr">You're on page</span> 1</li>
-<li><a href="latest_opportunities/2" aria-label="Page 2">2</a></li>
-<% if @jobs.length >9 %>
-<li><a href="#" aria-label="Page 3">3</a></li>
-<%end %>
-<li><a href="#" aria-label="Next page">Next <span class="show-for-sr">page</span></a></li>
-</ul>
-<% end %>
-</article>
-</div>
+<div class="row">
+	<div class="large-12 columns">
+		<p>Do you have an opportunity you’d like to see featured here?  Please <a href="/contact_us">contact us</a> to find out how.</p>
+		<% oc=0 %>
+		<% @jobs.reverse.each do |message| %> 
+			<% if oc<10 %>
+				<% if message.release.to_date < Time.now %>
+					<% if message.expiry.to_date > Time.now %>
+						<% oc = oc+1 %>
+						<div class="row">
+							<div class="large-6 columns">
+								<% url="opportunity/" + message.url %>
+								<%=link_to image_tag(message.photo.url, alt:  message.name, width:"100%"),url %>
+							</div>
+							<div class="large-6 columns">
+								<% full_url=request.base_url+"/"+url%>
+								<h5><a class='OT' href=<%= url %>> <p><%= message.name %></p> </a></h5>
+								<p> <%= message.tagline %> </p>
+								<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Deadline: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
+								<%= social_share_button_tag(message.name, :url=>full_url) %>
+								<p class="content"><%= message.short %></p> 
+							</div>
+						</div>
+						<hr>
+					<% end %>
+				<% end %>
+			<% end %>
+		<% end %>
+
+		<% if @jobs.length >10 %>
+			<ul class="pagination" role="navigation" aria-label="Pagination">
+				<li class="disabled">Previous <span class="show-for-sr">page</span></li>
+				<li class="current"><span class="show-for-sr">You're on page</span> 1</li>
+				<li><a href="latest_opportunities/2" aria-label="Page 2">2</a></li>
+					<% if @jobs.length >9 %>
+						<li><a href="#" aria-label="Page 3">3</a></li>
+					<%end %>
+				<li><a href="#" aria-label="Next page">Next <span class="show-for-sr">page</span></a></li>
+			</ul>
+		<% end %>
+	</div>
 </div>
