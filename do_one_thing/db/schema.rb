@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160610145717) do
+ActiveRecord::Schema.define(version: 20160617102533) do
 
   create_table "impressions", force: :cascade do |t|
     t.string   "impressionable_type"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20160610145717) do
     t.datetime "expiry"
     t.datetime "release"
     t.integer  "impressions_count",  default: 0
+    t.text     "contact"
   end
 
   create_table "users", force: :cascade do |t|

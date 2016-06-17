@@ -59,6 +59,9 @@ RailsAdmin.config do |config|
       field :content do
         required true 
       end
+      field :contact do
+        required true
+      end
       field :release do
         required true
       end

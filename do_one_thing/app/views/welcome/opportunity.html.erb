@@ -21,15 +21,26 @@
 					<h5><a class='OT'> <p><%= message.name %></p> </a></h5>
 					<p>
 						<span> <%= message.tagline %> &nbsp;&nbsp;</span>
-<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Deadline: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
-<%= social_share_button_tag(message.name) %>
+<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Live until: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
+<% linkk = message.name + " #kcldo1thing" %>
+<%= social_share_button_tag(linkk) %>
 </p>
-					</p>
-					<p class="content"><%= message.content %></p> 
+					<p> <%=message.content %></p>
+					<% if message.contact != nil %>
+					<% if message.contact.include? "@" %>
+					<% linkke = "mailto:"+message.contact%>
+					<a href= <%= linkke %> >Further Information</a>				
+					<%else %>
+					<a href= <%= message.contact %> >Further Information</a>
+					<% end %>
+					<% end %>
 				</div>
 			<% end %>
 		<% end %>
 	<div class="large-12 columns">
+		<br>
+		<br>
+		<br>
 		<p> When you take up this opportunity, use #kcldo1thing to let us know how you got on! </p>
 
 	</div>

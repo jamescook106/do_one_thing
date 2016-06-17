@@ -13,12 +13,14 @@
 <div class="row">
 	<div class="large-12 columns">
 		<%=image_tag("Header_Placeholder.png", alt: "Header", width:"100%")%>
+		<br>
+		<br>
 		<h4> Calling all King's Researchers! </h4>
-		<ol>
+		<ul>
 			<li>Too many activities to choose from?</li>
 			<li>Just #do1thing to help your professional future</li>
 			<li>You’re two clicks away from a great opportunity</li>
-		</ol>
+		</ul>
 	</div>
 </div>
 
@@ -92,7 +94,7 @@
 
 <hr class='top'>
 	<div class="row column">
-		<h4 style="margin: 0;" class="text-center">LATEST OPPORTUNITES</h4>
+		<h4 style="margin: 0;" class="text-center">LATEST OPPORTUNITIES</h4>
 	</div>
 <hr class ='bottom'>
 
@@ -114,7 +116,7 @@
 								<% full_url=request.base_url+"/"+url%>
 								<h5><a class='OT' href=<%= url %>> <p><%= message.name %></p> </a></h5>
 								<p> <%= message.tagline %> </p>
-								<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Deadline: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
+								<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Live until: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
 								<%= social_share_button_tag(message.name, :url=>full_url) %>
 								<p class="content"><%= message.short %></p> 
 							</div>
@@ -125,7 +127,7 @@
 			<% end %>
 		<% end %>
 
-		<% if @jobs.length >10 %>
+		<% if @jobs.length >9 %>
 			<ul class="pagination" role="navigation" aria-label="Pagination">
 				<li class="disabled">Previous <span class="show-for-sr">page</span></li>
 				<li class="current"><span class="show-for-sr">You're on page</span> 1</li>
