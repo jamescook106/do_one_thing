@@ -55,7 +55,7 @@ gem 'rails_admin'
 
 gem 'paperclip'
 
-gem 'aws-sdk', '~> 2.3'
+gem 'aws-s3'
 
 gem 'devise'
 
