@@ -15,7 +15,7 @@ module DoOneThing
     access_key_id:      Rails.application.secrets.s3[:access],
     secret_access_key:  Rails.application.secrets.s3[:sercret]
   }
-  bucket: Rails.application.secrets.s3[:bucket]
+  s3_bucket: Rails.application.secrets.s3[:bucket]
 }
 
     # Settings in config/environments/* take precedence over those specified here.
