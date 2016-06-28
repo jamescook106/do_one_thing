@@ -14,7 +14,7 @@ module DoOneThing
   s3_credentials: {
     access_key_id:      Rails.application.secrets.s3[:access],
     secret_access_key:  Rails.application.secrets.s3[:sercret]
-  }
+  },
   s3_bucket: Rails.application.secrets.s3[:bucket]
 }
 
