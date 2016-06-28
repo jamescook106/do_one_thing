@@ -1,2 +1,9 @@
-Paperclip::Attachment.default_options[:url] = ':s3_domain_url'
-Paperclip::Attachment.default_options[:path] = '/:class/:attachment/:id_partition/:style/:filename'
+Paperclip::Attachment.default_options.merge!({
+	storage: :s3,
+	s3_host_name: 's3-us-west-2.amazonaws.com',
+	s3_credentials: {
+		access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+		secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
+	},
+	bucket: ENV['S3_BUCKET_NAME']
+})
