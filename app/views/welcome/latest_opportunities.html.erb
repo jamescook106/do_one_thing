@@ -2,7 +2,7 @@
 
 <hr class='top'>
 	<div class="row column">
-		<h4 style="margin: 0;" class="text-center">MORE OPPORTUNITES</h4>
+		<h4 style="margin: 0;" class="text-center">MORE OPPORITUNITES</h4>
 	</div>
 <hr class ='bottom'>
 
@@ -25,7 +25,6 @@
 							</div>
 							<div class="large-6 columns">
 								<h5><a class='OT' href=<%= full_url %>> <p><%= message.name %></p> </a></h5>
-								<p><a class='OT' href=<%= full_url %>> <p><%= message.content %></p> </a></p>
 								<%= social_share_button_tag(message.name, :url=>full_url) %>
 								<p class="content"><%= message.short %></p> 
 								<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Live until: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
