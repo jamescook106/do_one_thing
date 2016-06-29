@@ -1,17 +1,17 @@
 <% @title=params[:id] %>
+
 <hr class='top'>
-<div class="row column">
-	<div class="large-12 columns">
-<h4 style="margin: 0;" class="text-center">OPPORTUNITY DESCRIPTION</h4>
-</div>
-</div>
+	<div class="row column">
+		<div class="large-12 columns">
+			<h4 style="margin: 0;" class="text-center">OPPORTUNITY DESCRIPTION</h4>
+		</div>
+	</div>
 <hr class='bottom'>
 
 <div class="row">
 	<%@hit.impressionist_count(:start_date=>Date.today-7.days)%>
 		<% page=params[:id] %>
 		<% @jobs.each do |message| %> 
-
 			<% if page==message.url %>
 			<% textdat = message.tagline.to_s %>
 				<div class="large-6 columns">
@@ -21,18 +21,18 @@
 					<h5><a class='OT'> <p><%= message.name %></p> </a></h5>
 					<p>
 						<span> <%= message.tagline %> &nbsp;&nbsp;</span>
-<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Live until: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
-<% linkk = message.name + " #kcldo1thing" %>
-<%= social_share_button_tag(linkk) %>
-</p>
+						<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Live until: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
+						<% linkk = message.name + " #kcldo1thing" %>
+						<%= social_share_button_tag(linkk) %>
+					</p>
 					<p> <%=message.content %></p>
 					<% if message.contact != nil %>
-					<% if message.contact.include? "@" %>
-					<% linkke = "mailto:"+message.contact%>
-					<a href= <%= linkke %> >Further Information</a>				
-					<%else %>
-					<a href= <%= message.contact %> >Further Information</a>
-					<% end %>
+						<% if message.contact.include? "@" %>
+							<% linkke = "mailto:"+message.contact%>
+							<a href= <%= linkke %> >Further Information</a>				
+						<%else %>
+							<a href= <%= message.contact %> >Further Information</a>
+						<% end %>
 					<% end %>
 				</div>
 			<% end %>
@@ -42,7 +42,6 @@
 		<br>
 		<br>
 		<p> When you take up this opportunity, use #kcldo1thing to let us know how you got on! </p>
-
 	</div>
 </div>
 <br>
