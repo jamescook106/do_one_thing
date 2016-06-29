@@ -19,13 +19,13 @@
 					<% if oc>=oclim %>
 						<div class="row">
 							<div class="large-6 columns">
-								<% url="opportunity/" + message.url %>
-								<%=link_to image_tag(message.photo.url, alt:  message.tagline,title:message.tagline, width:"100%"),url %>
+								<% url="/opportunity/" + message.url %>
+								<% full_url=request.base_url+"/"+url%>
+								<%=link_to image_tag(full_url, alt:  message.tagline,title:message.tagline, width:"100%"),url %>
 							</div>
 							<div class="large-6 columns">
-								<% full_url=request.base_url+"/"+url%>
-								<h5><a class='OT' href=<%= url %>> <p><%= message.name %></p> </a></h5>
-								<h5><a class='OT' href=<%= url %>> <p><%= message.name %></p> </a></h5>
+								<h5><a class='OT' href=<%= full_url %>> <p><%= message.name %></p> </a></h5>
+								<h5><a class='OT' href=<%= full_url %>> <p><%= message.content %></p> </a></h5>
 								<%= social_share_button_tag(message.name, :url=>full_url) %>
 								<p class="content"><%= message.short %></p> 
 								<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Live until: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>

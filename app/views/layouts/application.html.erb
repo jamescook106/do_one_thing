@@ -57,7 +57,7 @@
 	<div class="large-8 columns">
 	<p>&copy; 2016&nbsp;King's College London | Strand | London WC2R 2LS | England | United Kingdom | Tel +44 (0)20 7836 5454</p>
 	<% if not user_signed_in? %>
-		<p class="pfooter"><%= link_to "Sign in", new_user_session_path %> </p>
+		<p class="pfooter"><small><%= link_to "Sign in", new_user_session_path %> </small></p>
 	<% end %>
 </div>
 <div class="large-2 columns" align="right">
