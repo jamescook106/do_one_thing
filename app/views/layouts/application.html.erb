@@ -55,10 +55,10 @@
 		<%=image_tag("header_logos.png", alt: "King's College London Logo", width:"100%")%>
 	</div>
 	<div class="large-8 columns">
+	<p>&copy; 2016&nbsp;King's College London | Strand | London WC2R 2LS | England | United Kingdom | Tel +44 (0)20 7836 5454</p>
 	<% if not user_signed_in? %>
 		<p class="pfooter"><%= link_to "Sign in", new_user_session_path %> </p>
 	<% end %>
-	<p>&copy; 2016&nbsp;King's College London | Strand | London WC2R 2LS | England | United Kingdom | Tel +44 (0)20 7836 5454</p>
 </div>
 <div class="large-2 columns" align="right">
 	<ul class="menu">
