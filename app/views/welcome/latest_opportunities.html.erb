@@ -20,7 +20,7 @@
 						<div class="row">
 							<div class="large-6 columns">
 								<% url="opportunity/" + message.url %>
-								<%=link_to image_tag(message.photo.url, alt:  message.tagline, width:"100%"),url %>
+								<%=link_to image_tag(message.photo.url, alt:  message.tagline,title:message.tagline, width:"100%"),url %>
 							</div>
 							<div class="large-6 columns">
 								<% full_url=request.base_url+"/"+url%>

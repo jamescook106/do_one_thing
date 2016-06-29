@@ -36,7 +36,7 @@
 			<div class="medium-8 columns">
 				<% url="opportunity/" + message.url %>
 				<div class="overlay-container">
-					<%=link_to image_tag(message.photo.url(:primary), alt: message.tagline, title:message.name, width:"100%"),url %>
+					<%=link_to image_tag(message.photo.url(:primary), alt: message.tagline, title:message.tagline, width:"100%"),url %>
 					<div class="overlay"><span><%= message.name %></span></div>
 				</div>
 			</div>
@@ -51,7 +51,7 @@
 			<div class="medium-4 columns">
 				<% url="opportunity/" + message.url %>
 				<div class="overlay-container">
-					<%=link_to image_tag(message.photo.url(:secondary), alt: message.tagline, title:message.name, width:"100%"),url %>
+					<%=link_to image_tag(message.photo.url(:secondary), alt: message.tagline, title:message.tagline, width:"100%"),url %>
 					<div class="overlay"><span><%= message.name %></span></div>
 				</div>
 			</div>
@@ -86,7 +86,7 @@
 			<% oc1 = oc1+1 %>
 			<div class="column">
 				<% url="opportunity/" + pop[3] %>
-				<%=link_to image_tag(pop[1], alt:  pop[2], width:'370'),url%>
+				<%=link_to image_tag(pop[1], alt:  pop[2],title: pop[2], width:'370'),url%>
 			</div>
 		<% end %>
 	<% end %>
@@ -110,7 +110,7 @@
 						<div class="row">
 							<div class="large-6 columns">
 								<% url="opportunity/" + message.url %>
-								<%=link_to image_tag(message.photo.url, alt:  message.tagline, width:"100%"),url %>
+								<%=link_to image_tag(message.photo.url, alt:  message.tagline,title:message.tagline, width:"100%"),url %>
 							</div>
 							<div class="large-6 columns">
 								<% full_url=request.base_url+"/"+url%>

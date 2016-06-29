@@ -15,7 +15,7 @@
 			<% if page==message.url %>
 			<% textdat = message.tagline.to_s %>
 				<div class="large-6 columns">
-					<%=image_tag(message.photo.url, alt: message.tagline, width:"100%")%>
+					<%=image_tag(message.photo.url, alt: message.tagline,title:message.tagline, width:"100%")%>
 				</div>
 				<div class="large-6 columns">
 					<h5><a class='OT'> <p><%= message.name %></p> </a></h5>
