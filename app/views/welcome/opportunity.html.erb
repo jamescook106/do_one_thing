@@ -15,13 +15,11 @@
 			<% if page==message.url %>
 			<% textdat = message.tagline.to_s %>
 				<div class="large-6 columns">
-					<%=image_tag(message.photo.url, alt: "See a Careers Consultant", width:"100%")%>
+					<%=image_tag(message.photo.url, alt: message.tagline, width:"100%")%>
 				</div>
 				<div class="large-6 columns">
 					<h5><a class='OT'> <p><%= message.name %></p> </a></h5>
 					<p>
-						<span> <%= message.tagline %> &nbsp;&nbsp;</span>
-						<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Live until: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
 						<% linkk = message.name + " #kcldo1thing" %>
 						<%= social_share_button_tag(linkk) %>
 					</p>
@@ -34,6 +32,7 @@
 							<a href= <%= message.contact %> >Further Information</a>
 						<% end %>
 					<% end %>
+					<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Live until: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
 				</div>
 			<% end %>
 		<% end %>

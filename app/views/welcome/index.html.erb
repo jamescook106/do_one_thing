@@ -36,7 +36,7 @@
 			<div class="medium-8 columns">
 				<% url="opportunity/" + message.url %>
 				<div class="overlay-container">
-					<%=link_to image_tag(message.photo.url(:primary), alt: message.name, title:message.name, width:"100%"),url %>
+					<%=link_to image_tag(message.photo.url(:primary), alt: message.tagline, title:message.name, width:"100%"),url %>
 					<div class="overlay"><span><%= message.name %></span></div>
 				</div>
 			</div>
@@ -51,7 +51,7 @@
 			<div class="medium-4 columns">
 				<% url="opportunity/" + message.url %>
 				<div class="overlay-container">
-					<%=link_to image_tag(message.photo.url(:secondary), alt: message.name, title:message.name, width:"100%"),url %>
+					<%=link_to image_tag(message.photo.url(:secondary), alt: message.tagline, title:message.name, width:"100%"),url %>
 					<div class="overlay"><span><%= message.name %></span></div>
 				</div>
 			</div>
@@ -110,15 +110,14 @@
 						<div class="row">
 							<div class="large-6 columns">
 								<% url="opportunity/" + message.url %>
-								<%=link_to image_tag(message.photo.url, alt:  message.name, width:"100%"),url %>
+								<%=link_to image_tag(message.photo.url, alt:  message.tagline, width:"100%"),url %>
 							</div>
 							<div class="large-6 columns">
 								<% full_url=request.base_url+"/"+url%>
 								<h5><a class='OT' href=<%= url %>> <p><%= message.name %></p> </a></h5>
-								<p> <%= message.tagline %> </p>
-								<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Live until: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
 								<%= social_share_button_tag(message.name, :url=>full_url) %>
 								<p class="content"><%= message.short %></p> 
+								<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Live until: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
 							</div>
 						</div>
 						<hr>
