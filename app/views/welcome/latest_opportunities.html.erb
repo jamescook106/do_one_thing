@@ -11,25 +11,29 @@
 		<% oc=0 %>
 		<% oclim = 11 %>
 		<% @jobs.reverse.each do |message| %> 
-			<% if oc<oclim %>
-				<% oc = oc+1 %>
-			<% end %>
-			<% if oc>=oclim %>
-				<div class="row">
-					<div class="large-6 columns">
-						<% url="opportunity/" + message.url %>
-						<%=link_to image_tag(message.photo.url, alt:  message.name, width:"100%"),url %>
-					</div>
-					<div class="large-6 columns">
-						<% full_url=request.base_url+"/"+url%>
-						<h5><a class='OT' href=<%= url %>> <p><%= message.name %></p> </a></h5>
-						<p> <%= message.tagline %> </p>
-						<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Live until: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
-						<%= social_share_button_tag(message.name, :url=>full_url) %>
-						<p class="content"><%= message.short %></p> 
-					</div>
-				</div>
-				<hr>
+			<% if message.release.to_date < Time.now %>
+				<% if message.expiry.to_date > Time.now %>
+					<% if oc<oclim %>
+						<% oc = oc+1 %>
+					<% end %>
+					<% if oc>=oclim %>
+						<div class="row">
+							<div class="large-6 columns">
+								<% url="opportunity/" + message.url %>
+								<%=link_to image_tag(message.photo.url, alt:  message.name, width:"100%"),url %>
+							</div>
+							<div class="large-6 columns">
+								<% full_url=request.base_url+"/"+url%>
+								<h5><a class='OT' href=<%= url %>> <p><%= message.name %></p> </a></h5>
+								<p> <%= message.tagline %> </p>
+								<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Live until: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
+								<%= social_share_button_tag(message.name, :url=>full_url) %>
+								<p class="content"><%= message.short %></p> 
+							</div>
+						</div>
+						<hr>
+					<% end %>
+				<% end %>
 			<% end %>
 		<% end %>
 	</div>
