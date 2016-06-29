@@ -9,11 +9,12 @@
 <div class="row">
 	<div class="large-12 columns">
 		<% oc=0 %>
-		<% oclim = 2+(6*(params[:no].to_i-2)) %>
+		<% oclim = 9 %>
 		<% @jobs.reverse.each do |message| %> 
 			<% if oc<oclim %>
 				<% oc = oc+1 %>
-			<% else %>
+			<% end %>
+			<% if oc>=oclim %>
 				<div class="row">
 					<div class="large-6 columns">
 						<% url="opportunity/" + message.url %>
