@@ -127,7 +127,16 @@
 			<% end %>
 		<% end %>
 
-		<% if @jobs.length >9 %>
+		<% jobtot=0 %>
+		<%@jobs.each do |message| %>
+			<% if message.release.to_date < Time.now %>
+				<% if message.expiry.to_date > Time.now %>
+					<% jobtot = jobtot+1 %>
+				<% end %>
+			<% end %>
+		<% end %>
+
+		<% if jobtot >9 %>
 			<ul class="pagination" role="navigation" aria-label="Pagination">
 				<li class="disabled">Previous <span class="show-for-sr">page</span></li>
 				<li class="current"><span class="show-for-sr">You're on page</span> 1</li>
