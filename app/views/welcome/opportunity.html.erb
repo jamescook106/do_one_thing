@@ -32,6 +32,7 @@
 							<a href= <%= message.contact %> >Further Information</a>
 						<% end %>
 					<% end %>
+					<br>
 					<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Live until: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
 				</div>
 			<% end %>
