@@ -10,7 +10,7 @@
 	<div class="large-12 columns">
 		<% oc=0 %>
 		<% oclim = 11 %>
-		<% @jobs.reverse.each do |message| %> 
+		<% @jobs.order([:release]).reverse.each do |message| %> 
 			<% if message.release.to_date < Time.now %>
 				<% if message.expiry.to_date > Time.now %>
 					<% if oc<oclim %>

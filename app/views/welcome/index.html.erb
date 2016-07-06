@@ -31,7 +31,7 @@
 <hr class='bottom'>
 
 <div class="row">
-	<% @jobs.reverse.each do |message| %> 
+	<% @jobs.order([:release]).reverse.each do |message| %> 
 		<%if message.primary==true %>
 			<div class="medium-8 columns">
 				<% url="opportunity/" + message.url %>
@@ -44,7 +44,7 @@
 		<% end %>
 	<% end %>
 	
-	<% @jobs.reverse.each do |message| %> 
+	<% @jobs.order([:release]).reverse.each do |message| %> 
 	<% sc=0 %>
 		<%if message.secondary==true and sc<2 %>
 			<%sc=sc+1 %>
@@ -67,7 +67,7 @@
 
 <div class="row small-up-3 medium-up-4 large-up-5">
 	<% sarray=[] %>
-	<% @jobs.reverse.each do |message| %>
+	<% @jobs.order([:release]).reverse.each do |message| %> 
 		<% if message.release.to_date < Time.now %>
 			<% if message.expiry.to_date > Time.now %>
 				<% ssaray=[] %>
@@ -75,6 +75,7 @@
 				<% ssaray << message.photo.url(:thumb) %>
 				<% ssaray << message.name %>
 				<% ssaray << message.url %>
+				<% ssaray << message.tagline %>
 				<% sarray << ssaray %>
 			<% end %>
 		<% end %>
@@ -86,7 +87,7 @@
 			<% oc1 = oc1+1 %>
 			<div class="column">
 				<% url="opportunity/" + pop[3] %>
-				<%=link_to image_tag(pop[1], alt:  pop[2],title: pop[2], width:'370'),url%>
+				<%=link_to image_tag(pop[1], alt:  pop[4],title: pop[4], width:'370'),url%>
 			</div>
 		<% end %>
 	<% end %>
@@ -102,7 +103,7 @@
 	<div class="large-12 columns">
 		<p>Do you have an opportunity you’d like to see featured here?  Please <a href="/contact_us">contact us</a> to find out how.</p>
 		<% oc=0 %>
-		<% @jobs.reverse.each do |message| %> 
+		<% @jobs.order([:release]).reverse.each do |message| %> 
 			<% if oc<10 %>
 				<% if message.release.to_date < Time.now %>
 					<% if message.expiry.to_date > Time.now %>
@@ -140,9 +141,6 @@
 				<li class="disabled">Previous <span class="show-for-sr">page</span></li>
 				<li class="current"><span class="show-for-sr">You're on page</span> 1</li>
 				<li><a href="latest_opportunities/2" aria-label="Page 2">2</a></li>
-					<% if jobtot >19 %>
-						<li><a href="latest_opportunities/3" aria-label="Page 3">3</a></li>
-					<%end %>
 				<li><a href="latest_opportunities/2" aria-label="Next page">Next <span class="show-for-sr">page</span></a></li>
 			</ul>
 		<% end %>
