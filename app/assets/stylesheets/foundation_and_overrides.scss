@@ -107,6 +107,11 @@ p.pfooter{
   background-color: rgba(255, 255, 255, 0.7);
 }
 
+.image_width{
+	width:100%;
+	border: 2px solid blue;
+}
+
 #cookie-bar {background:#111111; height:auto; line-height:24px; color:#eeeeee; text-align:center; padding:3px 0;}
 #cookie-bar.fixed {position:fixed; top:0; left:0; width:100%;}
 #cookie-bar.fixed.bottom {bottom:0; top:auto;}
