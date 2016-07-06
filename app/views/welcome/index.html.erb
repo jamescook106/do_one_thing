@@ -75,6 +75,7 @@
 				<% ssaray << message.photo.url(:thumb) %>
 				<% ssaray << message.name %>
 				<% ssaray << message.url %>
+				<% ssaray << message.tagline %>
 				<% sarray << ssaray %>
 			<% end %>
 		<% end %>
@@ -86,7 +87,7 @@
 			<% oc1 = oc1+1 %>
 			<div class="column">
 				<% url="opportunity/" + pop[3] %>
-				<%=link_to image_tag(pop[1], alt:  pop[2],title: pop[2], width:'370'),url%>
+				<%=link_to image_tag(pop[1], alt:  pop[4],title: pop[4], width:'370'),url%>
 			</div>
 		<% end %>
 	<% end %>
