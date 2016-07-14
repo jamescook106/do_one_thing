@@ -12,9 +12,12 @@ default: &default
 
 development:
   <<: *default
-  database: test_dev
+  database: development
+  host: localhost
+  pool: 5
   username: developer
-  password: de
+  password: dev
+
 
 # The following setting are for use on MacOS
   #database: test_dev
