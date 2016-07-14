@@ -62,6 +62,4 @@ gem 'cancancan'
 
 gem 'social-share-button'
 
-gem 'impressionist'
-
-ruby "2.2.1" 
+gem 'impressionist' 

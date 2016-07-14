@@ -1,6 +1,18 @@
+#Job.rb
+#This is the model for Job
+
 class Job < ActiveRecord::Base
+
+	#Here is the appropiate line to record analytics
 	include Impressionist::IsImpressionable
+
+	#Here we have the appropiate settings for using paperclip
 	has_attached_file :photo,
+
+	#The three different styles for the attached photos
+	#Thumb is for the most popular section
+	#Primary is for the spot on the top left of page
+	#Secondary is for the spots on the top right of the page
 	:styles =>{
 		:thumb =>"400x300#",
 		:primary => "900x450#",
