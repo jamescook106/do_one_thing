@@ -7,14 +7,19 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: 5	
-  
+  pool: 5
+
 
 development:
   <<: *default
   database: test_dev
-  username: James	
-  password: 
+  username: developer
+  password: de
+
+# The following setting are for use on MacOS
+  #database: test_dev
+  #username: YOUR_USERNAME
+  #password:
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -24,6 +29,3 @@ development:
 production:
   <<: *default
   database: master #Database name
- 
-
-
