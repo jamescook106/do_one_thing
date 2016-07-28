@@ -1,6 +1,6 @@
 <% @title="Home" %>
 
-<script type="text/javascript"> 
+<script type="text/javascript">
   $(document).ready(function(){
      $.cookieBar({
      	policyButton: true,
@@ -42,7 +42,7 @@
 <hr class='bottom'>
 
 <div class="row">
-	<% @jobs.order([:release]).reverse.each do |message| %> 
+	<% @jobs.order([:release]).reverse.each do |message| %>
 		<%if message.primary==true %>
 			<div class="medium-8 columns">
 				<% url="opportunity/" + message.url %>
@@ -54,8 +54,8 @@
 		<% break %>
 		<% end %>
 	<% end %>
-	
-	<% @jobs.order([:release]).reverse.each do |message| %> 
+
+	<% @jobs.order([:release]).reverse.each do |message| %>
 	<% sc=0 %>
 		<%if message.secondary==true and sc<2 %>
 			<%sc=sc+1 %>
@@ -78,7 +78,7 @@
 
 <div class="row small-up-3 medium-up-4 large-up-5">
 	<% sarray=[] %>
-	<% @jobs.order([:release]).reverse.each do |message| %> 
+	<% @jobs.order([:release]).reverse.each do |message| %>
 		<% if message.release.to_date < Time.now %>
 			<% if message.expiry.to_date > Time.now %>
 				<% ssaray=[] %>
@@ -91,7 +91,7 @@
 			<% end %>
 		<% end %>
 	<% end %>
-	<% oc1=0 %> 	
+	<% oc1=0 %>
 	<% sarray.sort! {|x,y| x[0]<=>y[0]} %>
 	<% sarray.reverse.each do |pop| %>
 		<% if oc1<5 %>
@@ -114,7 +114,7 @@
 	<div class="large-12 columns">
 		<p>Do you have an opportunity you’d like to see featured here?  Please <a href="/contact_us">contact us</a> to find out how.</p>
 		<% oc=0 %>
-		<% @jobs.order([:release]).reverse.each do |message| %> 
+		<% @jobs.order([:release]).reverse.each do |message| %>
 			<% if oc<10 %>
 				<% if message.release.to_date < Time.now %>
 					<% if message.expiry.to_date > Time.now %>
@@ -128,8 +128,8 @@
 								<% full_url=request.base_url+"/"+url%>
 								<h5><a class='OT' href=<%= url %>> <p><%= message.name %></p> </a></h5>
 								<%= social_share_button_tag(message.name, :url=>full_url) %>
-								<p class="content"><%= message.short %></p> 
-								<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Live until: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
+								<p class="content"><%= message.short %></p>
+								<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Live here until: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
 							</div>
 						</div>
 						<hr>

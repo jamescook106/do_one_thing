@@ -14,7 +14,7 @@
 <hr class='top'>
 	<div class="row column">
 		<div class="large-12 columns">
-			<h4 style="margin: 0;" class="text-center">OPPORTUNITY DESCRIPTION</h4>
+			<h4 style="margin: 0;" class="text-center">OPPORTUNITY</h4>
 		</div>
 	</div>
 <hr class='bottom'>
@@ -22,7 +22,7 @@
 <div class="row">
 	<%@hit.impressionist_count(:start_date=>Date.today-7.days)%>
 		<% page=params[:id] %>
-		<% @jobs.each do |message| %> 
+		<% @jobs.each do |message| %>
 			<% if page==message.url %>
 			<% textdat = message.tagline.to_s %>
 				<div class="large-6 columns">
@@ -38,7 +38,7 @@
 					<% if message.contact != nil %>
 						<% if message.contact.include? "@" %>
 							<% linkke = "mailto:"+message.contact%>
-							<a href= <%= linkke %> >Further Information</a>				
+							<a href= <%= linkke %> >Further Information</a>
 						<%else %>
 							<a href= <%= message.contact %> >Further Information</a>
 						<% end %>
@@ -56,5 +56,3 @@
 	</div>
 </div>
 <br>
-
-
