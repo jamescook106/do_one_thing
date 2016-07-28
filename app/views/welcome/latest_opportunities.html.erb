@@ -21,7 +21,7 @@
 	<div class="large-12 columns">
 		<% oc=0 %>
 		<% oclim = 11 %>
-		<% @jobs.order([:release]).reverse.each do |message| %> 
+		<% @jobs.order([:release]).reverse.each do |message| %>
 			<% if message.release.to_date < Time.now %>
 				<% if message.expiry.to_date > Time.now %>
 					<% if oc<oclim %>
@@ -37,8 +37,8 @@
 							<div class="large-6 columns">
 								<h5><a class='OT' href=<%= full_url %>> <p><%= message.name %></p> </a></h5>
 								<%= social_share_button_tag(message.name, :url=>full_url) %>
-								<p class="content"><%= message.short %></p> 
-								<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Live until: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
+								<p class="content"><%= message.short %></p>
+								<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Live here until: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
 							</div>
 						</div>
 						<hr>
