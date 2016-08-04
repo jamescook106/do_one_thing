@@ -42,12 +42,12 @@
 <hr class='bottom'>
 
 <div class="row">
-	<% @jobs.order([:release]).reverse.each do |message12| %>
-		<%if message12.primary==true %>
+	<% @jobs.order([:release]).reverse.each do |message| %>
+		<%if message.primary==true %>
 			<div class="medium-8 columns">
-				<% url="opportunity/" + message12.url %>
+				<% url="opportunity/" + message.url %>
 				<div class="overlay-container">
-					<%=link_to image_tag(message12.photo.url(:primary), alt: message12.tagline, title:message12.tagline, width:"100%"),url %>
+					<%=link_to image_tag(message.photo.url(:primary), alt: message.tagline, title:message.tagline, width:"100%"),url %>
 					<div class="overlay"><span><%= message.name %></span></div>
 				</div>
 			</div>
@@ -55,15 +55,15 @@
 		<% end %>
 	<% end %>
 
-	<% @jobs.order([:release]).reverse.each do |message7| %>
+	<% @jobs.order([:release]).reverse.each do |message| %>
 	<% sc=0 %>
-		<%if message7.secondary==true and sc<2 %>
+		<%if message.secondary==true and sc<2 %>
 			<%sc=sc+1 %>
 			<div class="medium-4 columns">
-				<% url="opportunity/" + message7.url %>
+				<% url="opportunity/" + message.url %>
 				<div class="overlay-container">
-					<%=link_to image_tag(message7.photo.url(:secondary), alt: message7.tagline, title:message7.tagline, width:"100%"),url %>
-					<div class="overlay"><span><%= message7.name %></span></div>
+					<%=link_to image_tag(message.photo.url(:secondary), alt: message.tagline, title:message.tagline, width:"100%"),url %>
+					<div class="overlay"><span><%= message.name %></span></div>
 				</div>
 			</div>
 		<% end %>
