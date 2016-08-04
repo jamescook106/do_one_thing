@@ -129,7 +129,7 @@
 								<h5><a class='OT' href=<%= url %>> <p><%= message.name %></p> </a></h5>
 								<%= social_share_button_tag(message.name, :url=>full_url) %>
 								<p class="content"><%= message.short %></p>
-								<p class="time"> Live until: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
+								<p class="time"> Live here until: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
 							</div>
 						</div>
 						<hr>
@@ -158,7 +158,7 @@
             <h5><a class='OT' href=<%= url %>> <p><%= message2.name %></p> </a></h5>
             <%= social_share_button_tag(message2.name, :url=>full_url) %>
             <p class="content"><%= message2.short %></p>
-            <p class="time"> Live until: <%= message2.expiry.to_date.strftime("%d/%m/%Y") %></p>
+            <p class="time"> Live here until: <%= message2.expiry.to_date.strftime("%d/%m/%Y") %></p>
           </div>
         </div>
         <hr>
