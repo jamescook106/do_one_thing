@@ -38,13 +38,13 @@
 					<% if message.contact != nil %>
 						<% if message.contact.include? "@" %>
 							<% linkke = "mailto:"+message.contact%>
-							<a href= <%= linkke %> >Further Information</a>
+							<a href= <%= linkke %> >Further Information via Email</a>
 						<%else %>
-							<a href= <%= message.contact %> >Further Information</a>
+							<a href= <%= message.contact %> >Further Information via External Link</a>
 						<% end %>
 					<% end %>
 					<br>
-					<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Live until: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
+					<p class="time">Opportunity added on: <%= message.release.to_date.strftime("%d/%m/%Y") %>. Live here until: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
 				</div>
 			<% end %>
 		<% end %>
