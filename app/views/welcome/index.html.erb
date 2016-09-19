@@ -122,7 +122,10 @@
 						<div class="row">
 							<div class="large-6 columns">
 								<% url="opportunity/" + message.url %>
-								<%=link_to image_tag(message.photo.url, alt:  message.tagline,title:message.tagline, width:"100%"),url %>
+                <div class="overlay-container">
+                  <%=link_to image_tag(message.photo.url, alt:  message.tagline,title:message.tagline, width:"100%"),url %>
+                  <div class="overlay"><span><%= message.copyright %></span></div>
+                </div>
 							</div>
 							<div class="large-6 columns">
 								<% full_url=request.base_url+"/"+url%>
@@ -151,7 +154,10 @@
         <div class="row">
           <div class="large-6 columns">
             <% url="opportunity/" + message2.url %>
-            <%=link_to image_tag(message2.photo.url, alt:  message2.tagline,title:message2.tagline, width:"100%"),url %>
+            <div class="overlay-container">
+              <%=link_to image_tag(message2.photo.url, alt:  message2.tagline,title:message2.tagline, width:"100%"),url %>
+              <div class="overlay"><span><%= message2.copyright %></span></div>
+            </div>
           </div>
           <div class="large-6 columns">
             <% full_url=request.base_url+"/"+url%>
