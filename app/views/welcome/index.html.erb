@@ -124,7 +124,7 @@
 								<% url="opportunity/" + message.url %>
                 <div class="overlay-container">
                   <%=link_to image_tag(message.photo.url, alt:  message.tagline,title:message.tagline, width:"100%"),url %>
-                  <div class="overlay"><span><%= message.copyright %></span></div>
+                  <div class="overlay"><span><p><%= message.copyright %></p></span></div>
                 </div>
 							</div>
 							<div class="large-6 columns">
@@ -156,7 +156,7 @@
             <% url="opportunity/" + message2.url %>
             <div class="overlay-container">
               <%=link_to image_tag(message2.photo.url, alt:  message2.tagline,title:message2.tagline, width:"100%"),url %>
-              <div class="overlay"><span><%= message2.copyright %></span></div>
+              <div class="overlay"><span><p><%= message2.copyright %></p></span></div>
             </div>
           </div>
           <div class="large-6 columns">
