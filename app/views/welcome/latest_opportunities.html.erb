@@ -34,7 +34,9 @@
 								<% full_url=request.base_url+"/"+url%>
                 <div class="overlay-container">
                   <%=link_to image_tag(message.photo.url, alt:  message.tagline,title:message.tagline, width:"100%"),url %>
-                  <div class="overlay"><span><p><%= message.copyright %></p></span></div>
+                  <% if message.copyright %>
+                    <div class="overlay"><span><p>Copyright: <%= message.copyright %></p></span></div>
+                  <% end %>
                 </div>
 							</div>
 							<div class="large-6 columns">
