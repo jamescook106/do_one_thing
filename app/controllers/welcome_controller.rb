@@ -1,5 +1,7 @@
+###############################################################################
 #WelcomeController.rb
 #This is the controller that sorts out generation of the pages
+###############################################################################
 
 class WelcomeController < ApplicationController
 
@@ -17,7 +19,9 @@ class WelcomeController < ApplicationController
   #It also stores analytics
   def generate
     @jobs = Job.all
+    #hit is the jobs sorted
     @hit = Job.where(url: params[:id]).first
+    #We use impressionist to keep track of most clicked opportunities
     impressionist(@hit)
     render template: "welcome/opportunity"
   end
@@ -28,9 +32,11 @@ class WelcomeController < ApplicationController
     render template: "welcome/latest_opportunities"
   end
 
-    private
-    def valid_page?
-      File.exist?(Pathname.new(Rails.root + "app/views/welcome/#{params[:page]}.html.erb"))
-    end
+  private
+
+  #Method for seeing if page exists
+  def valid_page?
+    File.exist?(Pathname.new(Rails.root + "app/views/welcome/#{params[:page]}.html.erb"))
+  end
 
 end
