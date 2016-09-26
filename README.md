@@ -31,7 +31,7 @@ git clone git@github.com:jamescook106/do_one_thing.git
 ```
 ```cd``` into the correct folder and proceed to edit:
 
-```
+```Ruby
 #config/database.yml
 development:
   <<: *default
@@ -40,8 +40,18 @@ development:
   pool: 5
   username: developer
   password: dev
+
+test:
+  <<: *default
+  database: test
+  host: localhost
+  pool: 5
+  username: developer
+  password: dev
 ```
+
 to the correct settings for your postgresql information. After this has been done you should be able to run ```rake db:migrate``` successfully. Now we want to create a sadmin (super admin) user so that we can have full access to the rails_admin panel. N.B there is another level of admin (called admin) which can add new opportunities to the database, but not edit other users. Only sadmins have this privilege. To create the sadmin, type ```rails console```, and then
+
 ```
 u=User.new()
 u.email="YOUR_EMAIL"
@@ -50,7 +60,7 @@ u.admin=true
 u.sadmin=true
 exit()
 ```
-Congratulations, you have now created an admin user! In the development environment you should simply be able to run ```rails s``` to start up the server!
+Congratulations, you have now created an sadmin user! In the development environment you should simply be able to run ```rails s``` to start up the server!
 
 ### Production
 
@@ -70,3 +80,19 @@ config.paperclip_defaults = {
   :path => '/:class/:attachment/:id_partition/:style/:filename',
 }
 ```
+
+# Usage
+
+Once the website is running we shall consider its usage from three perspectives, SAdmin, Admin and User
+
+### SAdmin
+
+As a SAdmin you will have access to the rails_admin admin interface. Using this interace you can add or remove other admins, as well as add opportunites to the site. SAdmin privileges should not be given to everyone
+
+### Admin
+
+With admin privileges you can add, edit and remove opportunites. However you cannot access other admins.
+
+### User
+
+If a user is created it cannot access the admin page, or do anything with a sadmin granting them admin status. The signup hyperlink is not present on the home page.

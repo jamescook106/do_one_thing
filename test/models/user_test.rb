@@ -21,8 +21,4 @@ class UserTest < ActiveSupport::TestCase
       assert true, 'Default User is not an sadmin'
     end
   end
-
-  # test "the truth" do
-  #   assert true
-  # end
 end
