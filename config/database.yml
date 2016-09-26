@@ -18,6 +18,13 @@ development:
   username: developer
   password: dev
 
+test:
+  <<: *default
+  database: test
+  host: localhost
+  pool: 5
+  username: developer
+  password: dev
 
 # The following setting are for use on MacOS
   #database: test_dev
