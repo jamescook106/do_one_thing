@@ -83,16 +83,16 @@ config.paperclip_defaults = {
 
 # Usage
 
-Once the website is running we shall consider its usage from three perspectives, SAdmin, Admin and User
+Once the website is running we shall consider its usage from three perspectives, Sadmin, Admin and User. It is worth noting here that the difference between the three types of users is down to two booleans (Sadmin and Admin) in the User model. If we wanted additional levels of admin access, one would simply add another boolean.
 
-### SAdmin
+### Sadmin
 
-As a SAdmin you will have access to the rails_admin admin interface. Using this interace you can add or remove other admins, as well as add opportunites to the site. SAdmin privileges should not be given to everyone
+As a Sadmin you will have access to the rails_admin admin interface. Using this interace you can add or remove other admins, as well as add opportunites to the site. Sadmin privileges should not be given to everyone.
 
 ### Admin
 
-With admin privileges you can add, edit and remove opportunites. However you cannot access other admins.
+As an admin you will have access to the rails_admin admin interface. With admin privileges you can add, edit and remove opportunites. However you cannot access other admins. It is recommended that staff are given admin privileges rather then sadmin unless it is vital that they have to manage other users.
 
 ### User
 
-If a user is created it cannot access the admin page, or do anything with a sadmin granting them admin status. The signup hyperlink is not present on the home page.
+If a user is created it cannot access the admin page, or do anything with a sadmin granting them admin status. The signup hyperlink is not present on the home page, to discourage random sign ups, but still allow staff to sign up given the appropiate URL. If these random sign-ups became a problem, one can simply remove the sign-up link, and enforce that only sadmins could create accounts for users
