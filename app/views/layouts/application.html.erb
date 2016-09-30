@@ -20,42 +20,43 @@
 			<%=link_to image_tag("GRADUATE_SCHOOL.png", alt: "Graduate School Logo", title: "Graduate School Logo")," http://www.kcl.ac.uk/study/graduate-school/researcher-development/index.aspx"%>
 			<%=link_to image_tag("CENTRE.png", alt: "Centre for Research Staff Development Logo", title:"Centre for Research Staff Development Logo")," http://www.kcl.ac.uk/crsd"%>
 			<%=link_to image_tag("do1thing_logo.png", alt: "Do1Thing Logo", title: "Do1Thing Logo", width:"182"), "/index"%>
-	</div>
+	    </div>
+    </div>
+
+    <div class="medium-12 columns show-for-large-only">
+      <%=link_to image_tag("medium.png", alt: "King's College London Logo, and Corresponding Graduate School etc logos", title: "King's College London Logo, and Corresponding Graduate School etc logos",width:"805"),"http://www.kcl.ac.uk/index.aspx"%>
+      <%=link_to image_tag("do1thing_logo.png", alt: "Do1Thing Logo", title: "Do1Thing Logo", width:"144"), "/index"%>
+    </div>
+    <div class="medium-12 columns show-for-medium-only">
+      <%=link_to image_tag("medium.png", alt: "King's College London Logo, and Corresponding Graduate School etc logos", title: "King's College London Logo, and Corresponding Graduate School etc logos",width:"614"),"http://www.kcl.ac.uk/index.aspx"%>
+      <%=link_to image_tag("do1thing_logo.png", alt: "Do1Thing Logo", title: "Do1Thing Logo", width:"100"), "/index"%>
+    </div>
+    <div class="small-12 columns show-for-small-only">
+    	<%=link_to image_tag("all_together.png", alt: "King's College London Logo, and Corresponding Graduate School etc logos", title: "King's College London Logo, and Corresponding Graduate School etc logos"),"http://www.kcl.ac.uk/index.aspx"%>
+    </div>
   </div>
 
-  <div class="medium-12 columns show-for-large-only">
-  <%=link_to image_tag("medium.png", alt: "King's College London Logo, and Corresponding Graduate School etc logos", title: "King's College London Logo, and Corresponding Graduate School etc logos",width:"805"),"http://www.kcl.ac.uk/index.aspx"%>
-    <%=link_to image_tag("do1thing_logo.png", alt: "Do1Thing Logo", title: "Do1Thing Logo", width:"144"), "/index"%>
-</div>
-  <div class="medium-12 columns show-for-medium-only">
-  <%=link_to image_tag("medium.png", alt: "King's College London Logo, and Corresponding Graduate School etc logos", title: "King's College London Logo, and Corresponding Graduate School etc logos",width:"614"),"http://www.kcl.ac.uk/index.aspx"%>
-    <%=link_to image_tag("do1thing_logo.png", alt: "Do1Thing Logo", title: "Do1Thing Logo", width:"100"), "/index"%>
-</div>
-  <div class="small-12 columns show-for-small-only">
-    	<%=link_to image_tag("all_together.png", alt: "King's College London Logo, and Corresponding Graduate School etc logos", title: "King's College London Logo, and Corresponding Graduate School etc logos"),"http://www.kcl.ac.uk/index.aspx"%>
+  <div class="row show-for-small-only">
+    <div class="small-12 columns">
+      <div class="top-bar">
+        <ul class="vertical menu" data-accordion-menu>
+          <li>
+            <a href="#">Menu</a>
+            <ul class="menu vertical nested">
+              <li><a href="/index">HOME</a></li>
+              <li><a href="/about">ABOUT</a></li>
+              <li><a href="/contact_us">CONTACT US</a></li>
+              <% if user_signed_in? %>
+                <li><%= link_to "Admin", '/admin' %></li>
+                <li><%= link_to "Profile", edit_user_registration_path %></li>
+                <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+              <% end %>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
-</div>
-<div class="row show-for-small-only">
-  <div class="small-12 columns">
-        <div class="top-bar">
-<ul class="vertical menu" data-accordion-menu>
-  <li>
-    <a href="#">Menu</a>
-    <ul class="menu vertical nested">
-      <li><a href="/index">HOME</a></li>
-      <li><a href="/about">ABOUT</a></li>
-      <li><a href="/contact_us">CONTACT US</a></li>
-      <% if user_signed_in? %>
-        <li><%= link_to "Admin", '/admin' %></li>
-        <li><%= link_to "Profile", edit_user_registration_path %></li>
-        <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
-      <% end %>
-    </ul>
-  </li>
-</ul>
-</div>
-</div>
-</div>
 
 <div class="row hide-for-small-only">
   <div class="medium-12 columns">
@@ -71,8 +72,8 @@
         <% if user_signed_in? %>
         <ul class="dropdown menu" data-dropdown-menu>
           <li><%= link_to "Admin", '/admin' %></li>
-            <li><%= link_to "Profile", edit_user_registration_path %></li>
-            <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+          <li><%= link_to "Profile", edit_user_registration_path %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
         </ul>
         <% end %>
       </div>
