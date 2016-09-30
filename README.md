@@ -1,5 +1,5 @@
 # #KCLDo1Thing
-The Researcher Development Unit at King’s College London is to run a campaign with the working title ‘#kcldo1thing’ to encourage PGRs and research staff to take up one of the numerous opportunities available to them at King’s. This website is a key element in the campaign. The project is delivered by the King’s Research Consultancy, funded by the Researcher Development Unit and Centre for Research Staff Development.
+The Researcher Development Unit at King’s College London (KCL) is to run a campaign with the working title ‘#kcldo1thing’ to encourage Post Graduate Researchers (PGR)s and research staff to take up one of the numerous opportunities available to them at King’s. This website is a key element in the campaign. The project is delivered by the King’s Research Consultancy, funded by the Researcher Development Unit and Centre for Research Staff Development. The main functionality of the website is to display 'opportunities' that are appropiate, and sometimes exclusive, to KCL PGRs and research staff.
 
 The site is written using [Ruby on Rails](http://rubyonrails.org). It utilises [Foundation](http://foundation.zurb.com), [Devise](https://github.com/plataformatec/devise), [CanCan](https://github.com/ryanb/cancan), [Paperclip](https://github.com/thoughtbot/paperclip) and [Rails_Admin](https://github.com/sferik/rails_admin) to create an enjoyable user experience, as well as a secure admin interface that can be used to easily add more opportunities to the website.
 
@@ -19,10 +19,11 @@ sudo su - postgres
 psql
 CREATE USER developer WITH PASSWORD 'dev';
 CREATE DATABASE development owner developer;
+CREATE DATABASE test owner developer;
 \q
 ```
 
-These commands should create the appropiate database for the the configured ```database.yml``` file.
+These commands should create the appropiate databases for the the configured ```database.yml``` file.
 ### The Website
 
 Clone the repo
@@ -50,7 +51,7 @@ test:
   password: dev
 ```
 
-to the correct settings for your postgresql information. After this has been done you should be able to run ```rake db:migrate``` successfully. Now we want to create a sadmin (super admin) user so that we can have full access to the rails_admin panel. N.B there is another level of admin (called admin) which can add new opportunities to the database, but not edit other users. Only sadmins have this privilege. To create the sadmin, type ```rails console```, and then
+to the correct settings for your postgresql information. If you created the databases outlined in the section above these settings will work. After this has been done you should be able to run ```rake db:migrate``` successfully. Now we want to create a sadmin (super admin) user so that we can have full access to the rails_admin panel. N.B there is another level of admin (called admin) which can add new opportunities to the database, but not edit other users. Only sadmins have this privilege. To create the sadmin, type ```rails console```, and then
 
 ```
 u=User.new()
