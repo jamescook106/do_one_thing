@@ -5,7 +5,6 @@ default: &default
   encoding: unicode
   pool: 5
 
-
 development:
   <<: *default
   database: development
@@ -14,6 +13,10 @@ development:
   username: developer
   password: dev
 
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+
 test:
   <<: *default
   database: test
@@ -21,16 +24,6 @@ test:
   pool: 5
   username: developer
   password: dev
-
-# The following setting are for use on MacOS
-  #database: test_dev
-  #username: YOUR_USERNAME
-  #password:
-
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
-
 
 production:
   <<: *default
