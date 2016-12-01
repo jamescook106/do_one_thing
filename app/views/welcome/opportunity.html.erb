@@ -34,7 +34,7 @@
 						<% linkk = message.name + " #kcldo1thing" %>
 						<%= social_share_button_tag(linkk) %>
 					</p>
-					<p> <%=message.content %></p>
+					<%= simple_format(message.content) %>
 					<% if message.contact != nil %>
 						<% if message.contact.include? "@" %>
 							<% linkke = "mailto:"+message.contact%>
