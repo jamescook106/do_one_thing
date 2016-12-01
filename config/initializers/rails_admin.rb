@@ -11,14 +11,6 @@ RailsAdmin.config do |config|
   ## == Cancan ==
   config.authorize_with :cancan
 
-  ## == Pundit ==
-  # config.authorize_with :pundit
-
-  ## == PaperTrail ==
-  # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
-
-  ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
-
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
@@ -49,7 +41,7 @@ RailsAdmin.config do |config|
       field :url do
         required true
         label 'Internal URL Linking'
-        help 'This is the internal linking code used by the website.  Choose one word from your headline.'
+        help 'This is the internal linking code used by the website.  Choose one word from your headline and ensure it only contains letters and/or numbers.'
       end
       field :tagline do
         required true
