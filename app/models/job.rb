@@ -6,6 +6,13 @@ class Job < ActiveRecord::Base
 	#Here is the appropiate line to record analytics
 	include Impressionist::IsImpressionable
 
+	validates :name, presence:true, length: { minimum: 2 }
+	validates :url, presence:true
+	validates :short, presence:true
+	validates :content, presence:true
+	validates :tagline, presence:true
+	validates :contact, presence:true
+
 	#Here we have the appropiate settings for using paperclip
 	has_attached_file :photo,
 
