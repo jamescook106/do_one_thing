@@ -26,7 +26,7 @@ class WelcomeController < ApplicationController
     render template: "welcome/opportunity"
   end
 
-  #Page 2
+  #Page 2: Can be extended to more pages in the future
   def no
     @jobs = Job.all
     render template: "welcome/latest_opportunities"

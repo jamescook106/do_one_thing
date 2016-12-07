@@ -1,17 +1,22 @@
+##############################################################################
 #Job.rb
-#This is the model for Job
+#This is the model for Job (opportunities)
+##############################################################################
 
 class Job < ActiveRecord::Base
 
 	#Here is the appropiate line to record analytics
 	include Impressionist::IsImpressionable
 
+	#Validate certain aspects of the model and check that they are present
 	validates :name, presence:true, length: { minimum: 2 }
 	validates :url, presence:true
+	validates :tagline, presence:true
 	validates :short, presence:true
 	validates :content, presence:true
-	validates :tagline, presence:true
 	validates :contact, presence:true
+	validates :release, presence:true
+	validates :expiry, presence:true
 
 	#Here we have the appropiate settings for using paperclip
 	has_attached_file :photo,
@@ -27,4 +32,5 @@ class Job < ActiveRecord::Base
 	}
 	do_not_validate_attachment_file_type :photo
 	is_impressionable :counter_cache => true
+
 end
