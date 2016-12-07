@@ -144,6 +144,7 @@ p.pfooter{
 #cookie-bar .cb-policy {background:#0033bb;}
 #cookie-bar .cb-policy:hover {background:#0055dd;}
 
+//Stop the top-bar flashing if the JS hasn't been loaded
 .no-js .top-bar {
   display: none;
 }
