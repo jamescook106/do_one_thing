@@ -2,6 +2,12 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
 
+  test "Create a User" do
+    user=User.new
+    user.save
+    assert true, 'Created a User'
+  end
+
   test "Default User is not admin" do
     user=User.new
     user.save
