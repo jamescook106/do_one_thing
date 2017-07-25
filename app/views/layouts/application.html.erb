@@ -86,22 +86,26 @@
 
 <%= javascript_include_tag "application" %>
 
-<div class="row expanded callout secondary">
-	<div class="large-1 small-2 columns">
-		<%=image_tag("KCL_LOGO.png", alt: "King's College London Logo", width:"100%")%>
-	</div>
-	<div class="large-8 small-7 columns">
-	<p><small>&copy; 2016&nbsp;King's College London | Strand | London WC2R 2LS | England | United Kingdom | Tel +44 (0)20 7836 5454</small></p>
-	<% if not user_signed_in? %>
-		<p class="pfooter"><small><%= link_to "Sign in", new_user_session_path %> </small></p>
-	<% end %>
+<div class="footer">
+  <br>
+  <div class = "row large-12 columns">
+	   <div class="large-1 small-2 columns">
+		     <%=image_tag("KCL_LOGO.png", alt: "King's College London Logo", width:"100%")%>
+	   </div>
+	   <div class="large-8 small-7 columns">
+	      <p><small>&copy; 2016&nbsp;King's College London | Strand | London WC2R 2LS | England | United Kingdom | Tel +44 (0)20 7836 5454</small></p>
+	      <% if not user_signed_in? %>
+		      <p class="pfooter"><small><%= link_to "Sign in", new_user_session_path %> </small></p>
+	      <% end %>
+    </div>
+    <div class="large-2 small-2 columns" align="right">
+	   <ul class="menu">
+		   <li><%= social_share_button_tag("Do1Thing", url:"www.kcldo1thing.com", 'data-twitter-title'=>'www.kcldo1thing.com') %></li>
+     </ul>
+    </div>
+  </div>
+  <br>
 </div>
-<div class="large-2 small-2 columns" align="right">
-	<ul class="menu">
-		<li>
-			<%= social_share_button_tag("Do1Thing", url:"www.kcldo1thing.com", 'data-twitter-title'=>'www.kcldo1thing.com') %>
-		</li>
-	</ul>
-</div>
+
 </body>
 </html>
