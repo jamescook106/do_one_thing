@@ -24,15 +24,16 @@
 // Cookie Bar
 ///////////////////////////////////////////////////////////////////////////////
 
-$(function(){ $(document).foundation(); });
-
-
-var $grid = $('.grid').imagesLoaded( function() {
-  // init Masonry after all images have loaded
-  $grid.masonry({
-    // options...
-  });
+// init Masonry
+var $grid = $('.grid').masonry({
+  // options...
 });
+// layout Masonry after each image loads
+$grid.imagesLoaded().progress( function() {
+  $grid.masonry('layout');
+});
+
+$(function(){ $(document).foundation(); });
 
 /*
  * Copyright (C) 2012 PrimeBox (info@primebox.co.uk)
