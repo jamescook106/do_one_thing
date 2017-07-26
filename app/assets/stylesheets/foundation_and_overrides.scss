@@ -163,25 +163,32 @@ p.pfooter{
 	background-color:rgba($black, 0.25);
 }
 
+/* ---- grid ---- */
+
 .grid {
-  background: #EEE;
-  max-width: 1200px;
+  background: #DDD;
 }
 
-/* clearfix */
+/* clear fix */
 .grid:after {
   content: '';
   display: block;
   clear: both;
 }
 
-/* ---- grid-item ---- */
+/* ---- .grid-item ---- */
+
+.grid-sizer,
+.grid-item {
+  width: 33.333%;
+	padding: 5px;
+}
 
 .grid-item {
-  width: 390px;
   float: left;
-  border: 2px solid #333;
-  border-color: hsla(0, 0%, 0%, 0.5);
-  border-radius: 1px;
-	padding: 5px;
+}
+
+.grid-item img {
+  display: block;
+  width: 100%;
 }
