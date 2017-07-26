@@ -52,7 +52,7 @@
 
 	<% @jobs.order([:release]).reverse.each do |message| %>
 	<% sc=0 %>
-		<%if message.secondary==true and sc<2 %>
+		<%if message.secondary==true and sc<1 %>
 			<%sc=sc+1 %>
 			<div class="medium-4 columns">
 				<% url="opportunity/" + message.url %>
@@ -116,12 +116,7 @@
   <div class="grid-item">
 
           <% url="opportunity/" + message2.url %>
-          <div class="overlay-container">
             <%=link_to image_tag(message2.photo.url, alt:  message2.tagline,title:message2.tagline, width:"100%"),url %>
-            <% if not message2.copyright.blank? %>
-              <div class="overlay"><span><p>Copyright: <%= message2.copyright %></p></span></div>
-            <% end %>
-          </div>
 
           <% full_url=request.base_url+"/"+url%>
           <h5><a class='OT' href=<%= url %>> <p><%= message2.name %></p> </a></h5>
