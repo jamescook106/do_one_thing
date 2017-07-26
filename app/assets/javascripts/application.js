@@ -23,16 +23,12 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Cookie Bar
 ///////////////////////////////////////////////////////////////////////////////
-
-
-var $grid = $('.grid').imagesLoaded( function() {
-  $grid.masonry({
-    itemSelector: '.grid-item',
-    percentPosition: true,
-    columnWidth: '.grid-sizer'
-  });
+$(document).ready(function() {
+$('.grid').masonry({
+  // options
+  itemSelector: '.grid-item',
 });
-
+});
 
 /*
  * Copyright (C) 2012 PrimeBox (info@primebox.co.uk)

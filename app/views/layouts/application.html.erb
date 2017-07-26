@@ -10,11 +10,6 @@
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js"></script>
-  <%= javascript_include_tag "application" %>
-
 <header>
 	<div class="row">
 		<div class="small-12 columns hide-for-small-only  hide-for-medium-only hide-for-large-only">
@@ -87,8 +82,6 @@
 </header>
 <%= yield %>
 <br>
-
-
 <div class="footer">
   <br>
   <div class = "row large-12 columns">
@@ -112,3 +105,17 @@
 
 </body>
 </html>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.js"></script>
+<script>
+ $(document).ready(function() {
+   var $grid = $('.grid').imagesLoaded( function() {
+  // init Masonry after all images have loaded
+  $grid.masonry({
+    itemSelector: '.grid-item',
+  });
+});
+});
+</script>

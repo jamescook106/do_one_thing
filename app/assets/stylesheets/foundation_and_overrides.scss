@@ -163,8 +163,6 @@ p.pfooter{
 	background-color:rgba($black, 0.25);
 }
 
-/* ---- grid ---- */
-
 .grid {
   background: #DDD;
 }
@@ -181,7 +179,6 @@ p.pfooter{
 .grid-sizer,
 .grid-item {
   width: 33.333%;
-	padding: 5px;
 }
 
 .grid-item {
@@ -190,5 +187,5 @@ p.pfooter{
 
 .grid-item img {
   display: block;
-  width: 100%;
+  max-width: 100%;
 }

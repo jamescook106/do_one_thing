@@ -110,22 +110,34 @@
 </div>
 
 <div class="row large-12 columns">
-  <div class="grid js-masonry">
-
-  <% @jobs.order([:release]).reverse.each do |message2| %>
+<div class="grid">
+  <div class="grid-sizer"></div>
   <div class="grid-item">
-
-          <% url="opportunity/" + message2.url %>
-            <%=link_to image_tag(message2.photo.url, alt:  message2.tagline,title:message2.tagline, width:"100%"),url %>
-
-          <% full_url=request.base_url+"/"+url%>
-          <h5><a class='OT' href=<%= url %>> <p><%= message2.name %></p> </a></h5>
-          <%= social_share_button_tag(message2.name, :url=>full_url) %>
-          <p class="content"><%= message2.short %></p>
-          <p class="time"> Live here until: <%= message2.expiry.to_date.strftime("%d/%m/%Y") %></p>
-
-      <hr>
-    </div>
-<% end %>
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg" />
+  </div>
 </div>
 </div>
