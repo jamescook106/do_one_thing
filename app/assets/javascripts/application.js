@@ -25,6 +25,15 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 $(function(){ $(document).foundation(); });
+
+
+var $grid = $('.grid').imagesLoaded( function() {
+  // init Masonry after all images have loaded
+  $grid.masonry({
+    // options...
+  });
+});
+
 /*
  * Copyright (C) 2012 PrimeBox (info@primebox.co.uk)
  *
