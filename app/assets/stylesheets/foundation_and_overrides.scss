@@ -163,10 +163,6 @@ p.pfooter{
 	background-color:rgba($black, 0.25);
 }
 
-.grid {
-  background: #DDD;
-}
-
 /* clear fix */
 .grid:after {
   content: '';
@@ -178,7 +174,14 @@ p.pfooter{
 
 .grid-sizer,
 .grid-item {
-  width: 33.333%;
+  width: 33%;
+	padding: 4px;
+	border-style: solid;
+	border-color: rgba($black, 0.35);
+	border-width: 2px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+
 }
 
 .grid-item {
