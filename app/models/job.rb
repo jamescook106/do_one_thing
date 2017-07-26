@@ -33,4 +33,7 @@ class Job < ActiveRecord::Base
 	do_not_validate_attachment_file_type :photo
 	is_impressionable :counter_cache => true
 
+	def self.rexpire
+		where("expiry > ? AND release < ?", Date.today, Date.today)
+	end
 end

@@ -100,94 +100,37 @@
 </div>
 
 <hr class='top'>
-	<div class="row column">
+	<div class="row column large-12">
 		<h4 style="margin: 0;" class="text-center">LATEST OPPORTUNITIES</h4>
 	</div>
 <hr class ='bottom'>
 
-<div class="row">
-	<div class="large-8 columns">
-		<p>Do you have an opportunity you’d like to see featured here?  Please <a href="/contact_us">contact us</a> to find out how.</p>
-    <% oc=0 %>
-		<% @jobs.order([:release]).reverse.each do |message| %>
-			<% if oc<2 %>
-				<% if message.release.to_date < Time.now %>
-					<% if message.expiry.to_date > Time.now %>
-						<% oc = oc+1 %>
-						<div class="row">
-							<div class="large-6 columns">
-								<% url="opportunity/" + message.url %>
-                <div class="overlay-container">
-                  <%=link_to image_tag(message.photo.url, alt:  message.tagline,title:message.tagline, width:"100%"),url %>
-                  <% if not message.copyright.blank? %>
-                    <div class="overlay"><span><p>Copyright: <%= message.copyright %></p></span></div>
-                  <% end %>
-                </div>
-							</div>
-							<div class="large-6 columns">
-								<% full_url=request.base_url+"/"+url%>
-								<h5><a class='OT' href=<%= url %>> <p><%= message.name %></p> </a></h5>
-								<%= social_share_button_tag(message.name, :url=>full_url) %>
-								<p class="content"><%= message.short %></p>
-								<p class="time"> Live here until: <%= message.expiry.to_date.strftime("%d/%m/%Y") %></p>
-							</div>
-						</div>
-						<hr>
-					<% end %>
-				<% end %>
-			<% end %>
-      <% end %>
+<div class="row column large-12">
+  <p>Do you have an opportunity you’d like to see featured here?  Please <a href="/contact_us">contact us</a> to find out how.</p>
 </div>
-<div class="large-4 columns" style="border-left: 1px solid #E3E5E8;">
-  <a class="twitter-timeline" data-height="700" data-theme="light" href="https://twitter.com/kcldo1thing">Tweets by kcldo1thing</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
-<div class="large-12 columns">
-  <%k1=0 %>
+
+<div class="row large-12 columns">
+<div class="grid" data-masonry='{ "itemSelector": ".grid-item"}'>
+
   <% @jobs.order([:release]).reverse.each do |message2| %>
-      <% if message2.release.to_date < Time.now %>
-        <% if message2.expiry.to_date > Time.now %>
-        <% k1=k1+1 %>
-        <% if k1>2 && k1<10%>
-        <div class="row">
-          <div class="large-6 columns">
-            <% url="opportunity/" + message2.url %>
-            <div class="overlay-container">
-              <%=link_to image_tag(message2.photo.url, alt:  message2.tagline,title:message2.tagline, width:"100%"),url %>
-              <% if not message2.copyright.blank? %>
-                <div class="overlay"><span><p>Copyright: <%= message2.copyright %></p></span></div>
-              <% end %>
-            </div>
-          </div>
-          <div class="large-6 columns">
-            <% full_url=request.base_url+"/"+url%>
-            <h5><a class='OT' href=<%= url %>> <p><%= message2.name %></p> </a></h5>
-            <%= social_share_button_tag(message2.name, :url=>full_url) %>
-            <p class="content"><%= message2.short %></p>
-            <p class="time"> Live here until: <%= message2.expiry.to_date.strftime("%d/%m/%Y") %></p>
-          </div>
-        </div>
-        <hr>
-        <% end %>
-        <% end %>
-      <% end %>
-    <% end %>
+  <div class="grid-item">
 
-    <% jobtot=0 %>
-    <%@jobs.each do |message| %>
-      <% if message.release.to_date < Time.now %>
-        <% if message.expiry.to_date > Time.now %>
-          <% jobtot = jobtot+1 %>
-        <% end %>
-      <% end %>
-    <% end %>
+          <% url="opportunity/" + message2.url %>
+          <div class="overlay-container">
+            <%=link_to image_tag(message2.photo.url, alt:  message2.tagline,title:message2.tagline, width:"100%"),url %>
+            <% if not message2.copyright.blank? %>
+              <div class="overlay"><span><p>Copyright: <%= message2.copyright %></p></span></div>
+            <% end %>
+          </div>
 
-    <% if jobtot >10 %>
-      <ul class="pagination" role="navigation" aria-label="Pagination">
-        <li class="disabled">Previous <span class="show-for-sr">page</span></li>
-        <li class="current"><span class="show-for-sr">You're on page</span> 1</li>
-        <li><a href="latest_opportunities/2" aria-label="Page 2">2</a></li>
-        <li><a href="latest_opportunities/2" aria-label="Next page">Next <span class="show-for-sr">page</span></a></li>
-      </ul>
-    <% end %>
-  </div>
+          <% full_url=request.base_url+"/"+url%>
+          <h5><a class='OT' href=<%= url %>> <p><%= message2.name %></p> </a></h5>
+          <%= social_share_button_tag(message2.name, :url=>full_url) %>
+          <p class="content"><%= message2.short %></p>
+          <p class="time"> Live here until: <%= message2.expiry.to_date.strftime("%d/%m/%Y") %></p>
+
+      <hr>
+    </div>
+<% end %>
+</div>
 </div>

@@ -7,7 +7,7 @@ class WelcomeController < ApplicationController
 
    #This renders pages
    def show
-      @jobs = Job.all
+      @jobs = Job.rexpire.all
       if valid_page?
         render template: "welcome/#{params[:page]}"
       else

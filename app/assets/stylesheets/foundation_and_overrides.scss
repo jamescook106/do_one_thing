@@ -162,3 +162,26 @@ p.pfooter{
 .footer{
 	background-color:rgba($black, 0.25);
 }
+
+.grid {
+  background: #EEE;
+  max-width: 1200px;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-item {
+  width: 390px;
+  float: left;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 1px;
+	padding: 5px;
+}
