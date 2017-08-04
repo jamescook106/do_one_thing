@@ -60,6 +60,12 @@
 //This is the custom css for the site
 //This overides the foundation css
 
+.image_wrapper{
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: space-between;
+}
+
 //Top bar
 .top-bar ul{
 	font-family: impact;
