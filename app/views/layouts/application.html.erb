@@ -12,36 +12,19 @@
   </head>
 <header>
 	<div class="row">
-		<div class="small-12 columns hide-for-small-only  hide-for-medium-only hide-for-large-only">
+		<div class="small-12 columns">
       <div class="image_wrapper">
 			<%=link_to image_tag("KCL_LOGO.png", alt: "King's College London Logo", title: "King's College London Logo"),"http://www.kcl.ac.uk/index.aspx"%>
-			<%=link_to image_tag("CAREERS.png", alt: "Careers Logo", title: "Careers Logo"),"http://www.kcl.ac.uk/campuslife/services/careers/index.aspx"%>
-			<%=link_to image_tag("GRADUATE_SCHOOL.png", alt: "Graduate School Logo", title: "Graduate School Logo")," http://www.kcl.ac.uk/study/graduate-school/researcher-development/index.aspx"%>
-			<%=link_to image_tag("CENTRE.png", alt: "Centre for Research Staff Development Logo", title:"Centre for Research Staff Development Logo")," http://www.kcl.ac.uk/crsd"%>
 			<%=link_to image_tag("do1thing_logo.png", alt: "Do1Thing Logo", title: "Do1Thing Logo", width:"182"), "/index"%>
 	    </div>
     </div>
-
-    <div class="medium-12 columns show-for-large-only">
-      <%=link_to image_tag("medium.png", alt: "King's College London Logo, and Corresponding Graduate School etc logos", title: "King's College London Logo, and Corresponding Graduate School etc logos",width:"805"),"http://www.kcl.ac.uk/index.aspx"%>
-      <%=link_to image_tag("do1thing_logo.png", alt: "Do1Thing Logo", title: "Do1Thing Logo", width:"144"), "/index"%>
-    </div>
-    <div class="medium-12 columns show-for-medium-only">
-      <%=link_to image_tag("medium.png", alt: "King's College London Logo, and Corresponding Graduate School etc logos", title: "King's College London Logo, and Corresponding Graduate School etc logos",width:"614"),"http://www.kcl.ac.uk/index.aspx"%>
-      <%=link_to image_tag("do1thing_logo.png", alt: "Do1Thing Logo", title: "Do1Thing Logo", width:"100"), "/index"%>
-    </div>
-    <div class="small-12 columns show-for-small-only">
-    	<%=link_to image_tag("all_together.png", alt: "King's College London Logo, and Corresponding Graduate School etc logos", title: "King's College London Logo, and Corresponding Graduate School etc logos"),"http://www.kcl.ac.uk/index.aspx"%>
-    </div>
   </div>
-
   <div class="row show-for-small-only">
     <div class="small-12 columns">
-      <div class="top-bar">
+      <div class="top-bar" data-topbar>
         <ul class="vertical menu" data-accordion-menu>
           <li>
-            <a href="#">Menu</a>
-            <ul class="menu vertical nested">
+            <ul class="menu vertical">
               <li><a href="/index">HOME</a></li>
               <li><a href="/about">ABOUT</a></li>
               <li><a href="/contact_us">CONTACT US</a></li>
@@ -56,7 +39,6 @@
       </div>
     </div>
   </div>
-
 <div class="row hide-for-small-only">
   <div class="medium-12 columns">
     <div class="top-bar">
@@ -105,7 +87,6 @@
 
 </body>
 </html>
-
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.js"></script>
