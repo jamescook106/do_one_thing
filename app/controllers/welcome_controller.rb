@@ -5,6 +5,10 @@
 
 class WelcomeController < ApplicationController
 
+  def search
+    @jobs = Job.rexpire.search(params[:search]).all
+  end
+
    #This renders pages
    def show
       @jobs = Job.rexpire.all
