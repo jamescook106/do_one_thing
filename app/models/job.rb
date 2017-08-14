@@ -36,4 +36,8 @@ class Job < ActiveRecord::Base
 	def self.rexpire
 		where("expiry > ? AND release < ?", Date.today, Date.today)
 	end
+
+	def self.search(search)
+		where("name iLIKE ? OR short iLIKE ?", "%#{search}%","%#{search}%")
+	end
 end
